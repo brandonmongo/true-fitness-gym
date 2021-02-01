@@ -34,10 +34,19 @@
     <title>True Fitness  {% block extra_title %} {% endblock %}</title>
   </head>
   <body>
-      
+
     {% if messages %}
         <div class="message-container"></div>
     {% endif %}
 
+    {% block page_header %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block postloadjs %}
+    {% endblock %}
+    
   </body>
 </html>
