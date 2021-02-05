@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.nav-list {
+    position: absolute;
+    bottom: 0;
+    right: 0.7rem;
+    padding-right: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+}
+ .nav-list a {
+    color: #FF914D;
+}
+
+.true-nav {
+    background-color: #545455;
+}
+
+.logo {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.true-text {
+    color: #FF914D;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #545455;
+}
+.hero-image {
+    background-image: url(/media/healthclub_traaning-og-faciliteter_fitness_topslider1920x1080_01.jpg);
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+.slogan {
+    margin: 0;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 90%;
+    color: #fff;
+    font-size: 35px;
+}
+
+.bg-black {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.true-font {
+    font-family: 'Oswald', sans-serif;
+}
+
+.true-join {
+    margin: 0;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 90%;
+    color: #fff;
+}
+
+.true-btn {
+    background-color: #FF914D;
+    border: #FF914D;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+.true-btn:hover {
+    color: black;
+}
+
+.member-heading {
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+
+.member-story {
+    margin-bottom: 25px;
+}
+
+.open-hours {
+    background-image: url(/media/healthclub_traaning-og-faciliteter_fitness_topslider1920x1080_04.jpg);
+    height: 450px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.hours-box {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: #fff;
+    width: 50%;
+}
+
+.hours-box h5, h6, p {
+    margin-left: 10px;
+}
