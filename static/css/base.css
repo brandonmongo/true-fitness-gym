@@ -13,6 +13,11 @@
     color: #FF914D;
 }
 
+.nav-list a:hover {
+    color: #fff;
+    text-decoration: underline #FF914D; 
+}
+
 .true-nav {
     background-color: #545455;
 }
@@ -26,22 +31,36 @@
     color: #FF914D;
 }
 
+.navbar-dark .navbar-toggler {
+    border-color: #FF914D;
+}
+
+.mob-nav a {
+    color: #FF914D;
+    font-family: 'Oswald', sans-serif;
+}
+
+.navbar-dark .navbar-brand {
+    color: #FF914D!important;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     color: #545455;
 }
 .hero-image {
     background-image: url(/media/healthclub_traaning-og-faciliteter_fitness_topslider1920x1080_01.jpg);
-    height: 500px;
+    height: 600px;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+    position: relative;
 }
 
 .slogan {
     margin: 0;
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -62,7 +81,7 @@ body {
 .true-join {
     margin: 0;
     position: absolute;
-    top: 85%;
+    top: 75%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -96,6 +115,7 @@ body {
     height: 450px;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    position: relative;
 }
 
 .hours-box {

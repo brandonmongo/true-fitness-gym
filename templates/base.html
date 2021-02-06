@@ -66,7 +66,8 @@
             </ul>
 
         </nav> -->
-            <div class="row true-nav">
+        <div class="d-none d-md-block">
+           <div class="row true-nav">
                 <div class="col-md-2">
                     <a href="#">
                         <img src="/media/LogoMakr-63IL0b.png" height="100%" width="100%" alt="Logo">
@@ -75,7 +76,7 @@
                 <div class="col-md-10">
                     <ul class="nav nav-list">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Home</a>
+                            <a class="nav-link" href="#">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Classes</a>
@@ -105,7 +106,24 @@
                         </li>
                     </ul>
                 </div>
+            </div> 
+        </div>
+            
+        <div class="fixed-top d-sm-block d-md-none">
+            <div class="collapse" id="navbarToggleExternalContent">
+                {% include 'includes/mobile_nav.html' %}
             </div>
+            <nav class="navbar navbar-dark true-nav">
+                <div class="col-3">
+                    <button class="navbar-toggler navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="true-text"><i class="fas fa-align-justify"></i></span>
+                    </button>
+                </div>
+                <div class="col-9">
+                    <h1 class="navbar-brand mb-0 true-font">True Fitness Gym</h1>
+                </div>
+            </nav>
+        </div>
     </header>
 
     {% if messages %}
