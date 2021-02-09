@@ -87,8 +87,19 @@
         </div>
         <div class="col-4">
             <h4 class="text-center">True Fitness Gym Location</h4> 
+            <div id="map"></div>
         </div>
     </div>
 </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'home/js/map.js' %}"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAE0BDqy57kEtnif_LjsapchOP-rXF6JDg&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+    
 {% endblock %}

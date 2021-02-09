@@ -132,3 +132,8 @@ body {
 .hours-box h5, h6, p {
     margin-left: 10px;
 }
+
+#map {
+  height: 400px;
+  width: 100%;
+}
