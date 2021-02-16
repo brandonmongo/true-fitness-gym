@@ -1,0 +1,431 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "Category": "WHEY PROTEIN",
+        "Name": "Gold Standard 100% Whey Protein",
+        "Brand": "Optimum Nutrition",
+        "Size": "1Kg",
+        "has_weight": true,
+        "Flavor": [
+            "Banana Cream",
+            "Birthday Cake",
+            "Cake Donut",
+            "Chocolate Hazelnut",
+            "Chocolate Malt",
+            "Chocolate Mint",
+            "Cookies & Cream",
+            "Delicious Strawberry",
+            "Double Rich Chocolate",
+            "Extreme Milk Chocolate",
+            "French Vanilla Creme",
+            "Gingerbread",
+            "Mocha Cappuccino",
+            "Peppermint Mocha",
+            "Rocky Road",
+            "Strawberries & Cream",
+            "Strawberry Banana",
+            "Unflavored",
+            "Vanilla Ice Cream"
+        ],
+        "Servings": 29,
+        "Rating": 9.3,
+        "FlavorRating": "8.4",
+        "Reviews": 10031,
+        "Price": 20.99,
+        "product_description": "Optimum Nutrition’s GOLD STANDARD 100% WHEY™ is the world’s best-selling whey protein*. It delivers 24 g of whey protein to support muscle growth. After training, your body uses protein to help repair and rebuild muscle fibres. Each great tasting serving contains 24 g of premium whey protein to support muscle growth and 5.5 g of naturally occurring BCAAs. All with just 1 g of fat, 1.2g of sugars, and with 1.6 g of carbs (Vanilla ice cream flavour).",
+        "image_url": "https://www.bodybuildingwarehouse.co.uk/media/catalog/product/cache/fa6a9646b31a7991253155167cd3f867/o/p/optimum-nutrition-100-whey-gold-standard-protein.jpg",
+        "image": "optimum-nutrition-100-whey-gold-standard-protein.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields":{
+        "Category": "AMINO ACIDS",
+        "Name": "Glycine Unflavored",
+        "Brand": "NOW",
+        "Size": "500 grams",
+        "Flavor": ["N/A"],
+        "Servings": 454,
+        "Rating": 8.7,
+        "FlavorRating": "10",
+        "Reviews": 3,
+        "Price": 19.99,
+        "product_description": "Glycine is a non-essential amino acid that occurs naturally in protein, which helps to build and repair new muscle1 — super-important whether you’re trying to add size or get shaped and toned. Our 100% Glycine Amino Acid powder is an easy way to make sure you stay topped up.",
+        "image_url": "https://s4.thcdn.com//productimg/1600/1600/10530386-1944689571381572.jpg",
+        "image": "10530386-1944689571381572.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields":{
+        "Category": "AMINO ACIDS",
+        "Name": "L-Arginine Powder",
+        "Brand": "NOW",
+        "Size": "500 grams",
+        "Flavor": ["N/A"],
+        "Servings": 98,
+        "Rating": 7.2,
+        "FlavorRating": "4.1",
+        "Reviews": 63,
+        "Price": 24.99,
+        "product_description": "L arginine is simply another name for the amino acid, arginine, which is a semi-essential amino acid. This means that it is not just found in foods, but also produced by the human body – in this case from glutamine via citrulline. The body uses arginine to produce biochemicals, enzymes and proteins.",
+        "image_url": "https://s4.thcdn.com//productimg/1600/1600/10529763-6144620646098084.jpg",
+        "image": "10529763-6144620646098084.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields":{
+        "Category": "AMINO ACIDS",
+        "Name": "L-Lysine Powder 1 Lb. Unflavored",
+        "Brand": "NOW",
+        "Size": "500 grams",
+        "Flavor": ["N/A"],
+        "Servings": 822,
+        "Rating": 7.9,
+        "FlavorRating": "10",
+        "Reviews": 4,
+        "Price": 16.99,
+        "product_description": "L-lysine is an essential amino acid that can be found in small quantities in a variety of foods. Getting it from your diet can be expensive and time-consuming, so we have created a convenient powder to increase your lysine intake, that can be added to your daily smoothie or shake. As it can be difficult to get exact amounts of lysine from food, supplementing with L-lysine is the super-convenient way of boosting your daily levels.",
+        "image_url": "https://s4.thcdn.com//productimg/1600/1600/10529480-1394695233843472.jpg",
+        "image": "10529480-1394695233843472.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields":{
+        "Category": "AMINO ACIDS",
+        "Name": "L-Methionine 100 Capsules",
+        "Brand": "NOW",
+        "Size": "100 Capsules",
+        "Flavor": ["N/A"],
+        "Servings": 50,
+        "Rating": 6.0,
+        "FlavorRating": "N/A",
+        "Reviews": 1,
+        "Price": 9.99,
+        "product_description": "L-Methionine is an essential amino acid, which means that it cannot be manufactured by the body and must be obtained through the diet or by supplementation. L-Methionine supports the production of the cellular radical scavenger glutathione, and thereby assists in natural detoxification processes. In the body, L-Methionine can also be converted into SAMe (S-Adenosyl Methionine), a compound that supports healthy joints. Furthermore, the human body relies on ingested sulfur amino acids, such as L-Methionine, for the synthesis of protein, as well as for biologically active sulfur.",
+        "image_url": "https://www.powerbody.co.uk/media/catalog/product/i/m/image_2017-08-07_59883633280b6.jpg",
+        "image": "image_2017-08-07_59883633280b6.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields":{
+        "Category": "AMINO ACIDS",
+        "Name": "Qualia Focus 100 Capsules",
+        "Brand": "Neurohacker Collective",
+        "Size": "100 Capsules",
+        "Flavor": ["N/A"],
+        "Servings": 20,
+        "Rating": 7.6,
+        "FlavorRating": "N/A",
+        "Reviews": 0,
+        "Price": "55.2",
+        "product_description": "Qualia Mind is a premium nootropic for mental performance and brain health. The one-step formulation packs 28 carefully selected ingredients designed to increase focus, concentration, energy, mental clarity, mood, memory, and creativity while supporting long-term brain health. Experience a whole cognitive upgrade with Qualia Mind.",
+        "image_url": "https://cdn1.neurohacker.com/iHxNh2HcedGPXwn5QzNjeodR.png",
+        "image": "iHxNh2HcedGPXwn5QzNjeodR.png"
+    }
+  },
+  {
+
+    "model": "products.product",
+    "pk": 7,
+    "fields":{
+        "Category": "AMINO ACIDS",
+        "Name": "Beta-Alanine",
+        "Brand": "Allmax Nutrition",
+        "Size": "100 Grams",
+        "Flavor": ["N/A"],
+        "Servings": 31,
+        "Rating": 8.5,
+        "FlavorRating": "5.8",
+        "Reviews": 46,
+        "Price": 12.74,
+        "product_description": "Our 100% Beta-Alanine Amino Acid is a pure form of the amino acid, beta alanine, that is perfect for adding to your daily protein shake. Beta alanine is a non-essential amino acid and is the only naturally-occurring beta amino acid. Beta alanine is different from most amino acids, as it is not used to synthesise proteins. Instead, it produces carnosine, which is stored in your skeletal muscles and reduces the build-up of lactic acid in your muscles during training.",
+        "image_url": "https://s4.thcdn.com//productimg/1600/1600/10529809-1214645039707579.jpg",
+        "image": "10529809-1214645039707579.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 8,
+    "fields":{
+        "Category": "AMINO ACIDS",
+        "Name": "L-Leucine 2000 100 Servings Unflavored",
+        "Brand": "Evlution Nutrition",
+        "Size": "100 Servings",
+        "Flavor": ["N/A"],
+        "Servings": 100,
+        "Rating": 10.0,
+        "FlavorRating": "10",
+        "Reviews": 6,
+        "Price": 29.99,
+        "product_description": "Leucine is an essential amino acid. It’s classed as essential because it can’t be made by your body, so must come from your diet. Trying to obtain enough essential amino acids, such as leucine, from your diet can be time consuming and expensive. That’s where we come in. We’ve created a supplement that’s super-convenient to take and easy to add into your existing healthy balanced diet.",
+        "image_url": "https://s4.thcdn.com//productimg/1600/1600/10529790-1104620646268115.jpg",
+        "image": "10529790-1104620646268115.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 9,
+    "fields":{
+        "Category": "AMINO ACIDS",
+        "Name": "Signature Thermogenic 100 Veggie Capsules",
+        "Brand": "Bodybuilding.com Signature",
+        "Size": "100 Veggie Capsules",
+        "Flavor": ["N/A"],
+        "Servings": 50,
+        "Rating": 7.5,
+        "FlavorRating": "N/A",
+        "Reviews": 2,
+        "Price": 17.49,
+        "product_description": "Our formula of essential vitamins and popular ingredients including green tea and black pepper extracts — that’ll boost your everyday wellbeing, with caffeine increasing endurance performance,1 and chromium supporting your metabolism to help you on your weight-loss journey. The term thermogenic literally means to produce heat, and is commonly applied to supplements which increase heat through metabolism.",
+        "image_url": "https://store.bbcomcdn.com/images/store/prodimage/prod_prod4740009/image_prodprod4740009_largeImage_X_450_white.jpg",
+        "image": "image_prodprod4740009_largeImage_X_450_white.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 10,
+    "fields":{
+        "Category": "AMINO ACIDS",
+        "Name": "L-Tryptophan 1000mg/60 Tablets",
+        "Brand": "NOW",
+        "Size": "1000mg/60 Tablets",
+        "Flavor": ["N/A"],
+        "Servings": 60,
+        "Rating": 9.0,
+        "FlavorRating": "N/A",
+        "Reviews": 2,
+        "Price": 22.99,
+        "product_description": "Tryptophan is an essential amino acid; therefore, it is not synthesized by the body and must be obtained from the diet. Tryptophan is critical for the production of serotonin and melatonin, which help to support a positive mood, healthy sleep patterns, and proper immune system function. Every lot of NOW® L-Tryptophan is tested to be free of peak E and microbial combination.",
+        "image_url": "https://cdn.shopify.com/s/files/1/0090/4747/4242/products/NOW-Foods-L-Tryptophan-500mg-120-vcaps-CSN_600x720.jpg?v=1610570",
+        "image": "NOW-Foods-L-Tryptophan-500mg-120-vcaps-CSN_600x720.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 11,
+    "fields":{
+        "Category": "AMINO ACIDS",
+        "Name": "HMB 1000 Caps 1000mg/90 Capsules",
+        "Brand": "Optimum Nutrition",
+        "Size": "1000mg/90 Capsules",
+        "Flavor": ["N/A"],
+        "Servings": 90,
+        "Rating": 8.5,
+        "FlavorRating": "N/A",
+        "Reviews": 76,
+        "Price": 37.99,
+        "product_description": "Beta-hydroxy beta-methylbutyrate (HMB) is an important metabolite of the essential branched chain amino acid (BCAA) L-Leucine. Human and animal studies suggest protein breakdown and support significant increases in muscle strength and size when combined with intense resistance training",
+        "image_url": "https://store.bbcomcdn.com/images/store/skuimage/sku_OPT031/image_skuOPT031_largeImage_X_450_white.jpg",
+        "image": "image_skuOPT031_largeImage_X_450_white.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 12,
+    "fields":{
+        "Category": "AMINO ACIDS",
+        "Name": "L-Tyrosine Powder 113 Grams Unflavored",
+        "Brand": "NOW",
+        "Size": "113 Grams",
+        "Flavor": ["N/A"],
+        "Servings": 282,
+        "Rating": 7.4,
+        "FlavorRating": "6.1",
+        "Reviews": 13,
+        "Price": 14.99,
+        "product_description": "L-tyrosine is a naturally occurring amino acid that can be found in small amounts in a range of foods. Getting it from your diet can be costly and time consuming, so we’ve created a convenient powder that can be easily added to your daily smoothie or shake.",
+        "image_url": "https://s4.thcdn.com///productimg/1600/1600/10530186-1714797381623403.jpg",
+        "image": "10530186-1714797381623403.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 13,
+    "fields":{
+        "Category": "PROTEIN BARS",
+        "Name": "Big 100 9 Bars Chocolate Chip Cookie Dough",
+        "Brand": "MET-Rx",
+        "Size": "9 Bars",
+        "Flavor": [
+            "Caramel Chocolate Crunch",
+            "Chocolate Crunch",
+            "Mint Mint Chocolate Chocolate Chip",
+            "Peanut Butter Crunch",
+            "S'Mores",
+            "Salted Toffee Pretzel",
+            "Strawberry Crunch",
+            "Vanilla Marshmallow",
+            "Birthday Cake Remix"
+        ],
+        "Servings": 9,
+        "Rating": 8.0,
+        "FlavorRating": "5.7",
+        "Reviews": 47,
+        "Price": 30.99,
+        "product_description": "Met-RX Protein Plus is a great tasting high-protein bar with low net carbs, perfect for someone trying to gain or maintain lean body mass. The 32 grams of protein in Protein Plus is more than you'd get in a 5 egg omlette, but with a tiny 5 mg cholesterol. The protein in Protein Plus comes primarily from Met-RX' premium Metamyosyn blend, which is a combination of all the best muscle-building proteins; whey, casein, and milk proteins plus egg white protein and glutamine.",
+        "image_url": "https://store.bbcomcdn.com/images/store/skuimage/sku_METR3270025/image_skuMETR3270025_largeImage_X_450_white.jpg",
+        "image": "image_skuMETR3270025_largeImage_X_450_white.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 14,
+    "fields":{
+        "Category": "PROTEIN DRINK",
+        "Name": "Pure Pro Shake 12 Bottles",
+        "Brand": "ABB",
+        "Size": "12 Bottles",
+        "Flavor": [
+            "Alpine Punch",
+            "Apple Melon",
+            "Blue Raspberry",
+            "Coconut",
+            "Grape Frost",
+            "Icy Orange",
+            "Mango Peach",
+            "Passion Fruit",
+            "Pineapple Orange Banana"
+        ],
+        "Servings": 12,
+        "Rating": 9.0,
+        "FlavorRating": "8.8",
+        "Reviews": 19,
+        "Price": 48.29,
+        "product_description": "PURE PRO 50 comes on strong with 50 grams of protein from milk and whey. Nothing comes close for convenience, taste and muscle-building support. A superior resealable aluminum bottle further distinguishes this potent potion from the pack, providing an easy way to save some for later. Work PURE PRO 50 into your workout routine and experience ABB superiority first hand.",
+        "image_url": "https://www.americanbodybuilding.com/us/img/media/products/pure-pro-50-3.png",
+        "image": "pure-pro-50-3.png"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 15,
+    "fields":{
+        "Category": "PROTEIN DRINK",
+        "Name": "Zero Carb 40 Gram 100% Whey Protein Isolate Drink",
+        "Brand": "Isopure",
+        "Size": "12 Bottles",
+        "Flavor": [
+            "Alpine Punch",
+            "Apple Melon",
+            "Blue Raspberry",
+            "Coconut",
+            "Grape Frost",
+            "Icy Orange",
+            "Mango Peach",
+            "Passion Fruit",
+            "Pineapple Orange Banana",
+            "Black Tea - Lemon",
+            "Green Tea"
+        ],
+        "Servings": 12,
+        "Rating": 9.0,
+        "FlavorRating": "8.1",
+        "Reviews": 93,
+        "Price": 44.24,
+        "product_description": "We're the only ones out there who can make a carb-free, clear drink like Zero Carb. One that's packed with 40g of 100% pure whey protein isolate and 100% awesome taste - 160 calories and 10.2g of BCAA's in every bottle.  Made with protein so pure you can't see it - the microfiltration process used to create Isopure® Protein is so complete, it creates the only completely clear milk protein when dissolved in water. Not to mention it's lactose-free and gluten-free, so you can better your bod without discomfort.  Recipe tip using Zero Carb Isopure® RTD: Fill a popsicle tray with your favorite Isopure® Zero Carb RTD and chill it out - a few hours later, you'll have delicious, icy-good, protein-packed popsicles, that will cool you down after the toughest of workouts.",
+        "image_url": "https://store.bbcomcdn.com/images/store/skuimage/sku_NB056/image_skuNB056_largeImage_X_450_white.jpg",
+        "image": "image_skuNB056_largeImage_X_450_white.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 16,
+    "fields":{
+        "Category": "PROTEIN BARS",
+        "Name": "Protein Crisp Bars",
+        "Brand": "BSN",
+        "Size": "12 Bars",
+        "Flavor": [
+            "Caramel Chocolate Crunch",
+            "Chocolate Crunch",
+            "Mint Mint Chocolate Chocolate Chip",
+            "Peanut Butter Crunch",
+            "S'Mores",
+            "Salted Toffee Pretzel",
+            "Strawberry Crunch",
+            "Vanilla Marshmallow",
+            "Birthday Cake Remix"
+        ],
+        "Servings": 12,
+        "Rating": 9.5,
+        "FlavorRating": "9.7",
+        "Reviews": 274,
+        "Price": 24.99,
+        "product_description": "BSN® Protein Bar is a soft, flavoured protein bar covered in a milk chocolate flavour coating, with sweeteners. Each serving provides 20 grams of muscle supporting protein and is low in sugar.",
+        "image_url": "https://cdn.muscleandstrength.com/store/media/catalog/product/cache/all/image/700x700/602f0fa2c1f0d1ba5e241f914e856ff9/p/r/protein_crisp_carton_smores_1.jpg",
+        "image": "protein_crisp_carton_smores_1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 17,
+    "fields":{
+        "Category": "WHEY PROTEIN",
+        "Name": "Pro JYM Protein Powder",
+        "Brand": "JYM Supplement Science",
+        "Size": "1Kg",
+        "has_weight": true,
+        "Flavor": [
+            "Chocolate Cookie Crunch",
+            "Chocolate Mousse",
+            "Chocolate Peanut Butter",
+            "Rocky Road",
+            "S'mores",
+            "Tahitian Vanilla Bean",
+            "Vanilla Peanut Butter Swirl"
+        ],
+        "Servings": 2,
+        "Rating": 9.2,
+        "FlavorRating": "9",
+        "Reviews": 2730,
+        "Price": 20.99,
+        "product_description": "Pro JYM provides a protein shake that is superior to the majority of whey protein concentrate powders available as it contains whey protein isolate and micellar casein in equal measures. You receive the benefits of four different protein sources- whey protein isolate, micellar casein, milk protein isolate and egg albumen. There is a generous 24g of protein per serving in Pro JYM. This facilitates your muscle protein synthesis rate to reach new levels and allows you to build greater muscle mass than a regular protein powder in your quest to build that muscular physique. Consuming this over products with a single protein source also allows your body to also prevent catabolism- overturning the process of your body feeding on its muscles as an energy source and allowing you to hold onto those muscle gains you have worked so hard for.",
+        "image_url": "https://store.bbcomcdn.com/images/store/skuimage/sku_JYM4910051/image_skuJYM4910051_largeImage_X_450_white.jpg",
+        "image": "image_skuJYM4910051_largeImage_X_450_white.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 18,
+    "fields":{
+        "Category": "WHEY PROTEIN",
+        "Name": "Animal Whey",
+        "Brand": "Animal",
+        "Size": "1Kg",
+        "has_weight": true,
+        "Flavor": [
+            "Chocolate Chocolate Chip",
+            "Glazed Donut",
+            "Mocha Cappuccino",
+            "Vanilla Naturally Flavored",
+            "Banana Cream",
+            "Brownie Batter",
+            "Chocolate",
+            "Chocolate Coconut",
+            "Cookies & Cream",
+            "Frosted Cinnamon Bun",
+            "Strawberry",
+            "Vanilla"
+        ],
+        "Servings": 2,
+        "Rating": 9.1,
+        "FlavorRating": "8.9",
+        "Reviews": 607,
+        "Price": 30.99,
+        "product_description": "It was with these high standards in mind that we formulated Animal Whey. Rich in prized whey protein isolate, fortified by digestive enzymes, mixes easily. A whopping 25 grams of protein per scoop. And it tastes great. We endeavored to create the ideal bodybuilding protein source, one worthy of the thirty-plus year Animal legacy, and the accolades garnered in the trenches assure us that this enterprise was a success. Never ones to settle, however, we continue to push for excellence.",
+        "image_url": "https://sshealthfoods.com/wp-content/uploads/2020/05/Animal-Whey-1.8-kg.jpg",
+        "image": "Animal-Whey-1.8-kg.jpg"
+    }
+  }
+]
