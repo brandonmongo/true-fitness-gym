@@ -1,1 +1,75 @@
-{{ products }}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <div class="header-contianer">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center true-text true-font mt-1 mb-5"><u>True Fitness Product</u></h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="sorting-box rounded">
+                    <p class="py-1">Select an option to order by:</p>
+                    <div class="radio-group">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="name(a-z)" name="sorter" class="custom-control-input">
+                            <label class="custom-control-label" for="name(a-z)">Name (A-Z)</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="name(z-a)" name="sorter" class="custom-control-input">
+                            <label class="custom-control-label" for="name(z-a)">Name (Z-A)</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="price(high_low)" name="sorter" class="custom-control-input">
+                            <label class="custom-control-label" for="price(high_low)">Price (High to Low)</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="price(low_high)" name="sorter" class="custom-control-input">
+                            <label class="custom-control-label" for="price(low_high)">Price(Low to High)</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="category" name="sorter" class="custom-control-input">
+                            <label class="custom-control-label" for="category">Category</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="radio" name="sorter" class="custom-control-input">
+                            <label class="custom-control-label" for="radio">Rating</label>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    {% for product in products %}
+                        <div class="col-sm-6 col-md-4">
+                            <div class="card mb-4 border-top-0 border-right-0 border-left-0 rounded-0 true-card">
+                                <img src="{{product.image_url}}" class="card-img-top"  height="50%" alt="{{product.Name}}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{product.Name}}</h5>
+                                    <p class="card-text">Price: £{{product.Price}}</p>
+                                    <p class="card-text">Rating: {{product.Rating}}</p>
+                                    <a href="#" class="btn btn-success">Purchase</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
