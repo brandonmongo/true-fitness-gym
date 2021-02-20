@@ -60,7 +60,7 @@
                                     <h5 class="card-title">{{product.Name}}</h5>
                                     <p class="card-text">Price: £{{product.Price}}</p>
                                     <p class="card-text">Rating: {{product.Rating}}</p>
-                                    <a href="#" class="btn btn-success">Purchase</a>
+                                    <a href="{% url 'products_details' product.id %}" class="btn btn-success">Purchase</a>
                                 </div>
                             </div>
                         </div>

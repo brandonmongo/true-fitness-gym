@@ -69,14 +69,14 @@
         <div class="d-none d-md-block">
            <div class="row true-nav">
                 <div class="col-md-2">
-                    <a href="#">
+                    <a href="{% url 'home' %}">
                         <img src="/media/LogoMakr-63IL0b.png" height="100%" width="100%" alt="Logo">
                     </a>
                 </div>
                 <div class="col-md-10">
                     <ul class="nav nav-list">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Classes</a>
@@ -85,7 +85,7 @@
                             <a class="nav-link" href="#">Hire PT</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Products</a>
+                            <a class="nav-link" href="{% url 'products' %}">Products</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Sign In</a>

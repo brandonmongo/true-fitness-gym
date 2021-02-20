@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <div class="header-contianer">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <!-- <div class="row">
+            <div class="col-12">
+                <h2 class="text-center true-text true-font mt-1 mb-5"><u>True Fitness Product</u></h2>
+            </div>
+        </div> -->
+
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <a href="{{product.image_url}}" target="_blank" >
+                    <div class="detail-img mb-3">
+                        <img src="{{product.image_url}}" class="" alt="{{product.Name}}">
+                    </div>
+                    
+                </a>
+                
+            </div>
+            <div class="col-md-6">
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <h3>{{product.Name}}</h3>
+                    </div>
+                    <div class="col-12">
+                        <h4>Product Overview</h4>
+                        <h5>{{product.Category}}</h5>
+                        <h6>Brand: {{product.Brand}}</h6>
+                        <p>{{product.product_description}}</p>
+                        <h5>Price: £{{product.Price}}</h5>
+                        <ul>
+                            <li>Rating: {{product.Rating}}</li>
+                            <li>Reviews: {{product.Reviews}}</li>
+                            <li>Amount: {{product.Size}}</li>
+                            <li>Serving: {{product.Servings}}</li>
+                        </ul>
+                    </div>
+                    <div class="col-12">
+                        <select class="custom-select custom-select-lg" name="flavor" id="flavor">
+                            <option selected>Select a Flavor</option>
+                            {% for Flavor in product.Flavor %}
+                            <option value="{{Flavour}}">{{Flavor}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
