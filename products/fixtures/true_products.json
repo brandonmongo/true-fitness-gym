@@ -1,9 +1,44 @@
-[
+[ {
+    "model":"products.category",
+    "pk": 1,
+    "fields": {
+        "name": "whey_product",
+        "friendly_name": "WHEY PROTEIN"
+    }
+    
+},
+   {
+    "model":"products.category",
+    "pk": 2,
+    "fields": {
+        "name": "amino_acids",
+        "friendly_name": "AMINO ACIDS"
+    }
+    
+},
+  {
+    "model":"products.category",
+    "pk": 3,
+    "fields": {
+        "name": "protein_bars",
+        "friendly_name": "PROTEIN BARS"
+    }
+    
+},
+  {
+    "model":"products.category",
+    "pk": 4,
+    "fields": {
+        "name": "protein_drink",
+        "friendly_name": "PROTEIN DRINK"
+    }
+    
+},
   {
     "model": "products.product",
     "pk": 1,
     "fields": {
-        "Category": "WHEY PROTEIN",
+        "Category": 1,
         "Name": "Gold Standard 100% Whey Protein",
         "Brand": "Optimum Nutrition",
         "Size": "1Kg",
@@ -43,7 +78,7 @@
     "model": "products.product",
     "pk": 2,
     "fields":{
-        "Category": "AMINO ACIDS",
+        "Category": 2,
         "Name": "Glycine Unflavored",
         "Brand": "NOW",
         "Size": "500 grams",
@@ -62,7 +97,7 @@
     "model": "products.product",
     "pk": 3,
     "fields":{
-        "Category": "AMINO ACIDS",
+        "Category": 2,
         "Name": "L-Arginine Powder",
         "Brand": "NOW",
         "Size": "500 grams",
@@ -81,7 +116,7 @@
     "model": "products.product",
     "pk": 4,
     "fields":{
-        "Category": "AMINO ACIDS",
+        "Category": 2,
         "Name": "L-Lysine Powder 1 Lb. Unflavored",
         "Brand": "NOW",
         "Size": "500 grams",
@@ -100,7 +135,7 @@
     "model": "products.product",
     "pk": 5,
     "fields":{
-        "Category": "AMINO ACIDS",
+        "Category": 2,
         "Name": "L-Methionine 100 Capsules",
         "Brand": "NOW",
         "Size": "100 Capsules",
@@ -119,7 +154,7 @@
     "model": "products.product",
     "pk": 6,
     "fields":{
-        "Category": "AMINO ACIDS",
+        "Category": 2,
         "Name": "Qualia Focus 100 Capsules",
         "Brand": "Neurohacker Collective",
         "Size": "100 Capsules",
@@ -139,7 +174,7 @@
     "model": "products.product",
     "pk": 7,
     "fields":{
-        "Category": "AMINO ACIDS",
+        "Category": 2,
         "Name": "Beta-Alanine",
         "Brand": "Allmax Nutrition",
         "Size": "100 Grams",
@@ -158,7 +193,7 @@
     "model": "products.product",
     "pk": 8,
     "fields":{
-        "Category": "AMINO ACIDS",
+        "Category": 2,
         "Name": "L-Leucine 2000 100 Servings Unflavored",
         "Brand": "Evlution Nutrition",
         "Size": "100 Servings",
@@ -177,7 +212,7 @@
     "model": "products.product",
     "pk": 9,
     "fields":{
-        "Category": "AMINO ACIDS",
+        "Category": 2,
         "Name": "Signature Thermogenic 100 Veggie Capsules",
         "Brand": "Bodybuilding.com Signature",
         "Size": "100 Veggie Capsules",
@@ -196,7 +231,7 @@
     "model": "products.product",
     "pk": 10,
     "fields":{
-        "Category": "AMINO ACIDS",
+        "Category": 2,
         "Name": "L-Tryptophan 1000mg/60 Tablets",
         "Brand": "NOW",
         "Size": "1000mg/60 Tablets",
@@ -215,7 +250,7 @@
     "model": "products.product",
     "pk": 11,
     "fields":{
-        "Category": "AMINO ACIDS",
+        "Category": 2,
         "Name": "HMB 1000 Caps 1000mg/90 Capsules",
         "Brand": "Optimum Nutrition",
         "Size": "1000mg/90 Capsules",
@@ -234,7 +269,7 @@
     "model": "products.product",
     "pk": 12,
     "fields":{
-        "Category": "AMINO ACIDS",
+        "Category": 2,
         "Name": "L-Tyrosine Powder 113 Grams Unflavored",
         "Brand": "NOW",
         "Size": "113 Grams",
@@ -253,7 +288,7 @@
     "model": "products.product",
     "pk": 13,
     "fields":{
-        "Category": "PROTEIN BARS",
+        "Category": 3,
         "Name": "Big 100 9 Bars Chocolate Chip Cookie Dough",
         "Brand": "MET-Rx",
         "Size": "9 Bars",
@@ -282,7 +317,7 @@
     "model": "products.product",
     "pk": 14,
     "fields":{
-        "Category": "PROTEIN DRINK",
+        "Category": 4,
         "Name": "Pure Pro Shake 12 Bottles",
         "Brand": "ABB",
         "Size": "12 Bottles",
@@ -311,7 +346,7 @@
     "model": "products.product",
     "pk": 15,
     "fields":{
-        "Category": "PROTEIN DRINK",
+        "Category": 4,
         "Name": "Zero Carb 40 Gram 100% Whey Protein Isolate Drink",
         "Brand": "Isopure",
         "Size": "12 Bottles",
@@ -342,7 +377,7 @@
     "model": "products.product",
     "pk": 16,
     "fields":{
-        "Category": "PROTEIN BARS",
+        "Category": 3,
         "Name": "Protein Crisp Bars",
         "Brand": "BSN",
         "Size": "12 Bars",
@@ -371,7 +406,7 @@
     "model": "products.product",
     "pk": 17,
     "fields":{
-        "Category": "WHEY PROTEIN",
+        "Category": 1,
         "Name": "Pro JYM Protein Powder",
         "Brand": "JYM Supplement Science",
         "Size": "1Kg",
@@ -399,7 +434,7 @@
     "model": "products.product",
     "pk": 18,
     "fields":{
-        "Category": "WHEY PROTEIN",
+        "Category": 1,
         "Name": "Animal Whey",
         "Brand": "Animal",
         "Size": "1Kg",

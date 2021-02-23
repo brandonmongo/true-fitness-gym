@@ -163,6 +163,11 @@ body {
     font-size: 1.2rem;
 }
 
+.cat-list a {
+    color: #FF914D;
+    font-family: 'Oswald', sans-serif;
+}
+
 /* True Products detail Page  */
 
 .detail-img {

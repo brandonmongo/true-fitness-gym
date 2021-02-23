@@ -4,8 +4,23 @@ from django.contrib.postgres.fields import ArrayField
 # Create your models here.
 
 
+class Category(models.Model):
+    class Meta:
+        verbose_name_plural = 'Categories'
+
+    name = models.CharField(max_length=255)
+    friendly_name = models.CharField(max_length=255, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_friendly_name(self):
+        return self.friendly_name
+
+
 class Product(models.Model):
-    Category = models.CharField(max_length=255, blank=True)
+    Category = models.ForeignKey(
+        'Category', null=True, blank=True, on_delete=models.SET_NULL)
     Name = models.CharField(max_length=255, blank=True)
     Brand = models.CharField(max_length=255, blank=True)
     Size = models.CharField(max_length=100, blank=True)

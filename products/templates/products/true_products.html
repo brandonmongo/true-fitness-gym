@@ -13,7 +13,28 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <h2 class="text-center true-text true-font mt-1 mb-5"><u>True Fitness Product</u></h2>
+                <h2 class="text-center true-text true-font mt-1 mb-3"><u>True Fitness Product</u></h2>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-12 true-nav">
+                <ul class="nav justify-content-center cat-list">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'products' %}?category=whey_product,amino_acids,protein_bars,protein_drink">ALL PRODUCTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'products' %}?category=whey_product">WHEY PROTEIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'products' %}?category=amino_acids">AMINO ACIDS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'products' %}?category=protein_bars">PROTEIN BARS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'products' %}?category=protein_drink">PROTEIN DRINK</a>
+                    </li>
+                </ul>
             </div>
         </div>
 
