@@ -19,7 +19,15 @@
 
         <div class="row">
             <div class="col-md-3">
-                <div class="sorting-box rounded">
+                <div class="row mb-1">
+                    <div class="col-12">
+                        <form class="form-inline" method="GET" action="{% url 'products' %}">
+                            <input class="form-control mr-sm-2" type="text" name="true-search" placeholder="Search for product" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="sorting-box rounded my-3 mr-2">
                     <p class="py-1">Select an option to order by:</p>
                     <div class="radio-group">
                         <div class="custom-control custom-radio">
