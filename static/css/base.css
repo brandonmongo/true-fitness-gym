@@ -168,10 +168,22 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
+.product-list {
+    padding-left: 5px;
+}
+
+.true-border {
+    border: 1px solid #545455;
+}
+
 /* True Products detail Page  */
 
 .detail-img {
     width: 95%;
+}
+
+.detail-img img {
+    width: 100%;
 }
 
 /* media Quries True Products Page  */

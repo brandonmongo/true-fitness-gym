@@ -36,6 +36,15 @@
                     </li>
                 </ul>
             </div>
+            <div class="col-12">
+                <ul class="nav justify-content-center cat-list">
+                    {% for c in current_categories %}
+                        <li class="nav-item">
+                            <a class="nav-link true-border mt-2 mr-2" href="{% url 'products' %}?category={{ c.name }}">{{ c.friendly_name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
 
         <div class="row">
@@ -52,28 +61,28 @@
                     <p class="py-1">Select an option to order by:</p>
                     <div class="radio-group">
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="name(a-z)" name="sorter" class="custom-control-input">
+                            <input type="radio" id="name(a-z)" name="sorter" class="custom-control-input" {% if current_sorting == 'Name_asc' %}selected{% endif %}>
                             <label class="custom-control-label" for="name(a-z)">Name (A-Z)</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="name(z-a)" name="sorter" class="custom-control-input">
+                            <input type="radio" id="name(z-a)" name="sorter" class="custom-control-input" {% if current_sorting == 'Name_desc' %}selected{% endif %}>
                             <label class="custom-control-label" for="name(z-a)">Name (Z-A)</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="price(high_low)" name="sorter" class="custom-control-input">
+                            <input type="radio" id="price(high_low)" name="sorter" class="custom-control-input"  {% if current_sorting == 'Price_desc' %}selected{% endif %}>
                             <label class="custom-control-label" for="price(high_low)">Price (High to Low)</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="price(low_high)" name="sorter" class="custom-control-input">
+                            <input type="radio" id="price(low_high)" name="sorter" class="custom-control-input" {% if current_sorting == 'Price_asc' %}selected{% endif %}>
                             <label class="custom-control-label" for="price(low_high)">Price(Low to High)</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="category" name="sorter" class="custom-control-input">
-                            <label class="custom-control-label" for="category">Category</label>
+                            <input type="radio" id="rating" name="sorter" class="custom-control-input" {% if current_sorting == 'Rating_asc' %}selected{% endif %}>
+                            <label class="custom-control-label" for="radio">Rating</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="radio" name="sorter" class="custom-control-input">
-                            <label class="custom-control-label" for="radio">Rating</label>
+                            <input type="radio" id="reset" name="sorter" class="custom-control-input" {% if current_sorting == 'None_None' %}selected{% endif %}>
+                            <label class="custom-control-label" for="reset">Reset</label>
                         </div>
                     </div>
                     
@@ -81,14 +90,39 @@
             </div>
             <div class="col-md-9">
                 <div class="row">
+                    <div class="col-12">
+                        <p>
+                            {% if search_product or current_categories or current_sorting != 'None_None' %}
+                                <span><a href="{% url 'products' %}">Products Home</a> | </span>
+                            {% endif %}
+                            {{ products|length }} Products {% if search_product %} found for <strong>{{ search_product }}</strong>{% endif %}
+                        </p>
+                    </div>
+                    
                     {% for product in products %}
                         <div class="col-sm-6 col-md-4">
                             <div class="card mb-4 border-top-0 border-right-0 border-left-0 rounded-0 true-card">
                                 <img src="{{product.image_url}}" class="card-img-top"  height="50%" alt="{{product.Name}}">
                                 <div class="card-body">
                                     <h5 class="card-title">{{product.Name}}</h5>
+                                    <ul class="product-list" style="list-style-type:none;">
+                                        <li>
+                                            {% if product.Category %}
+                                            <a href="{% url 'products' %}?category={{product.Category.name}}">{{product.Category.friendly_name}}</a>
+                                            {% endif %}
+                                        </li>
+                                        <li>
+                                           Price: £{{product.Price}} 
+                                        </li>
+                                        <li>
+                                            Rating: {{product.Rating}}
+                                        </li>
+                                    </ul>
+                                    <!-- {% if product.Category %}
+                                    <a href="{% url 'products' %}?category={{product.Category.name}}">{{product.Category.friendly_name}}</a>
+                                    {% endif %}
                                     <p class="card-text">Price: £{{product.Price}}</p>
-                                    <p class="card-text">Rating: {{product.Rating}}</p>
+                                    <p class="card-text">Rating: {{product.Rating}}</p> -->
                                     <a href="{% url 'products_details' product.id %}" class="btn btn-success">Purchase</a>
                                 </div>
                             </div>
