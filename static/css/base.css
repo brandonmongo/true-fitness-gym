@@ -176,6 +176,29 @@ body {
     border: 1px solid #545455;
 }
 
+.scroll-btn {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    background-color: #FF914D;
+    box-shadow: 5px 5px 10px #FF914D
+}
+
+.scroll-btn i {
+    margin-left: 33%;
+    margin-top: 30%;
+    color: #545455;
+    font-size: 20px;
+}
+
+.scroll-link {
+    cursor: pointer;
+}
+
+
 /* True Products detail Page  */
 
 .detail-img {

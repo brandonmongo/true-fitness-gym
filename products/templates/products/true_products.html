@@ -58,30 +58,31 @@
                     </div>
                 </div>
                 <div class="sorting-box rounded my-3 mr-2">
-                    <p class="py-1">Select an option to order by:</p>
+                    <p class="py-1">Select an option to sort by:</p>
                     <div class="radio-group">
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="name(a-z)" name="sorter" class="custom-control-input" {% if current_sorting == 'Name_asc' %}selected{% endif %}>
+                            <input type="radio" id="name(a-z)" name="sorter" value="Name_asc" class="custom-control-input radio-selector" {% if current_sorting == 'Name_asc' %}selected{% endif %}>
                             <label class="custom-control-label" for="name(a-z)">Name (A-Z)</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="name(z-a)" name="sorter" class="custom-control-input" {% if current_sorting == 'Name_desc' %}selected{% endif %}>
+                            <input type="radio" id="name(z-a)" name="sorter" value="Name_desc" class="custom-control-input radio-selector" {% if current_sorting == 'Name_desc' %}selected{% endif %}>
                             <label class="custom-control-label" for="name(z-a)">Name (Z-A)</label>
-                        </div>
+                        </div> 
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="price(high_low)" name="sorter" class="custom-control-input"  {% if current_sorting == 'Price_desc' %}selected{% endif %}>
-                            <label class="custom-control-label" for="price(high_low)">Price (High to Low)</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="price(low_high)" name="sorter" class="custom-control-input" {% if current_sorting == 'Price_asc' %}selected{% endif %}>
+                            <input type="radio" id="price(low_high)" name="sorter" value="Price_asc" class="custom-control-input radio-selector" {% if current_sorting == 'Price_asc' %}selected{% endif %}>
                             <label class="custom-control-label" for="price(low_high)">Price(Low to High)</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="rating" name="sorter" class="custom-control-input" {% if current_sorting == 'Rating_asc' %}selected{% endif %}>
-                            <label class="custom-control-label" for="radio">Rating</label>
+                            <input type="radio" id="price(high_low)" name="sorter" value="Price_desc" class="custom-control-input radio-selector"  {% if current_sorting == 'Price_desc' %}selected{% endif %}>
+                            <label class="custom-control-label" for="price(high_low)">Price (High to Low)</label>
+                        </div>
+                       
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="rating" name="sorter" value="Rating_desc" class="custom-control-input radio-selector" {% if current_sorting == 'Rating_asc' %}selected{% endif %}>
+                            <label class="custom-control-label" for="rating">Rating</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="reset" name="sorter" class="custom-control-input" {% if current_sorting == 'None_None' %}selected{% endif %}>
+                            <input type="radio" id="reset" name="sorter" value="reset" class="custom-control-input radio-selector" {% if current_sorting == 'None_None' %}selected{% endif %}>
                             <label class="custom-control-label" for="reset">Reset</label>
                         </div>
                     </div>
@@ -129,10 +130,48 @@
                         </div>
                     {% endfor %}
                 </div>
-
             </div>
         </div>
+    </div>
+    <div class="scroll-btn" data-toggle="tooltip" data-placement="bottom" title="Scroll to the top">
+        <a class="scroll-link">
+            <i class="fas fa-arrow-up"></i>
+        </a>
     </div>
 
 {% endblock %}
 
+{% block postloadjs %}
+    {{ block.super }}   
+    <script type="text/javascript">
+        $('.scroll-link').click(function(e) {
+            window.scrollTo(0, 0)
+        })
+    </script>
+    <script type="text/javascript">
+        console.log('hello brandon')
+        $('.radio-selector').change(function(){
+            console.log('hello')
+            var selector = $(this);
+            var currentUrl = new URL(window.location);
+
+            var selectorVal = selector.val();
+            if (selectorVal != 'reset') {
+                var sort = selectorVal.split('_')[0];
+                var direction = selectorVal.split('_')[1];
+                console.log(selectorVal)
+                console.log(sort)
+
+                currentUrl.searchParams.set('sort', sort);
+                currentUrl.searchParams.set('direction', direction);
+
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete('sort');
+                currentUrl.searchParams.delete('direction');
+
+                window.location.replace(currentUrl);
+            }
+        })
+    </script>
+{% endblock %}
