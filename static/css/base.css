@@ -209,6 +209,31 @@ body {
     width: 100%;
 }
 
+/* cart Page  */
+
+.checkout-btn {
+    background-color: #FF914D;
+    border: #FF914D;
+    color: #fff;
+}
+
+.checkout-btn:hover {
+    background-color: #545455;
+    color: #FF914D;
+}
+
+.back-to-product {
+    color: #545455;
+}
+
+.back-to-product:hover {
+    color: #545455;
+}
+
+.empty-cart-container {
+    height: 27vh;
+}
+
 /* media Quries True Products Page  */
 @media (max-width: 768px) and (min-width: 426px) {
     

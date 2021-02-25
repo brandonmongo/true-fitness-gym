@@ -19,7 +19,7 @@
             <a class="nav-link" href="#">Join Now</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> Cart 
+            <a class="nav-link" href="{% url 'cart' %}"><i class="fas fa-shopping-cart"></i> Cart 
                 <span>
                     {% if grand_total %}
                         £{{ grand_total|floatformat:2 }}
