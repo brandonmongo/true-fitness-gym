@@ -58,6 +58,31 @@
                         </select>
                     </div>
                 </div>
+                <form class="" action="{% url 'add_to_cart' product.id %}" method="POST">
+                        {% csrf_token %}
+                        <!-- <div class="form-group">
+                            <select class="custom-select custom-select-lg form-control" name="flavor" id="flavor">
+                                <option selected>Select a Flavor</option>
+                                {% for Flavor in product.Flavor %}
+                                <option value="{{Flavour}}">{{Flavor}}</option>
+                                {% endfor %}
+                            </select>
+                        </div> -->
+                        <div class="form-group">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" class="form-control form-control-lg" name="quantity"  value="1" max="99" min="1" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                        </div> 
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-lg checkout-btn btn-block">Add to Cart <i class="fas fa-shopping-cart ml-2"></i></button>
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </form>
+                <div>
+                    <a href="{% url 'products' %}" class="d-flex justify-content-end mr-2 my-4 back-to-product">
+                        <span><i class="fas fa-arrow-left mr-1"></i></span>
+                        <span class="text-uppercase ">keep shopping</span>
+                    </a>
+                </div>
             </div>
         </div>
 
