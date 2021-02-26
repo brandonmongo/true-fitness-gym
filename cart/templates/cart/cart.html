@@ -23,7 +23,9 @@
         <div class="row mb-3">
             <div class="col">
                 {% if cart_items %}
-                    <div class="table-responsive"></div>
+                    <div class="table-responsive">
+                        {{ cart_items }}
+                    </div>
                 {% else %}
                     <div class="empty-cart-container">
                         <p>Cart is empty</p>
