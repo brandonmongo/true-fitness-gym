@@ -234,6 +234,10 @@ body {
     height: 27vh;
 }
 
+.cart-img {
+    height: 250px;
+}
+
 /* media Quries True Products Page  */
 @media (max-width: 768px) and (min-width: 426px) {
     
