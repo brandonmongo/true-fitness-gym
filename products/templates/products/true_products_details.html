@@ -49,33 +49,45 @@
                             <li>Serving: {{product.Servings}}</li>
                         </ul>
                     </div>
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                         <select class="custom-select custom-select-lg" name="flavor" id="flavor">
                             <option selected>Select a Flavor</option>
                             {% for Flavor in product.Flavor %}
                             <option value="{{Flavour}}">{{Flavor}}</option>
                             {% endfor %}
                         </select>
-                    </div>
+                    </div> -->
                 </div>
                 <form class="" action="{% url 'add_to_cart' product.id %}" method="POST">
-                        {% csrf_token %}
-                        <!-- <div class="form-group">
-                            <select class="custom-select custom-select-lg form-control" name="flavor" id="flavor">
-                                <option selected>Select a Flavor</option>
-                                {% for Flavor in product.Flavor %}
-                                <option value="{{Flavour}}">{{Flavor}}</option>
-                                {% endfor %}
-                            </select>
-                        </div> -->
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <select class="custom-select custom-select-lg form-control" name="flavor" id="flavor" required>
+                            <option selected>Select a Flavor</option>
+                            {% for Flavor in product.Flavor %}
+                            <option value="{{Flavour}}">{{Flavor}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    {% with product.has_weight as w %}
+                    {% if w %}
                         <div class="form-group">
-                            <label for="quantity">Quantity</label>
-                            <input type="number" class="form-control form-control-lg" name="quantity"  value="1" max="99" min="1" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
-                        </div> 
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-lg checkout-btn btn-block">Add to Cart <i class="fas fa-shopping-cart ml-2"></i></button>
+                            <label for="product_weight">Select Weight</label>
+                            <select class="custom-select custom-select-lg form-control" name="product_weight" id="product_weight" required>
+                                <option value="1kg" selected>1Kg</option>
+                                <option value="2.5kg">2.5Kg</option>
+                                <option value="5kg">5Kg</option>
+                            </select>
                         </div>
-                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    {% endif %}
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" class="form-control form-control-lg" name="quantity"  value="1" max="99" min="1" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}" required>
+                    </div> 
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-lg checkout-btn btn-block">Add to Cart <i class="fas fa-shopping-cart ml-2"></i></button>
+                    </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    {% endwith %}
                 </form>
                 <div>
                     <a href="{% url 'products' %}" class="d-flex justify-content-end mr-2 my-4 back-to-product">
