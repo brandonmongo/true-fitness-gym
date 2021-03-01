@@ -10,14 +10,14 @@
 
     var allQtyInputs = $('.qty_input');
     for (var i = 0; i<allQtyInputs.length; i++) {
-        var itemId = $(allQtyInputs[i]).data('item_data');
+        var itemId = $(allQtyInputs[i]).data('item_id');
         handleEnableDisable(itemId);
     }
 
     $('.qty_input').change(function() {
-        var itemId = $(this).data('item_data');
+        var itemId = $(this).data('item_id');
         handleEnableDisable(itemId);
-    })
+    });
 
     // Increment quantity
     $('.increment-qty').click(function(e) {
