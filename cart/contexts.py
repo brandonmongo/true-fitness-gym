@@ -11,6 +11,8 @@ def cart_contents(request):
     product_count = 0
     heavy_weight_price = 0
     medium_weight_price = 0
+    wm_subtotal = 0
+    wm_subtotal = 0
 
     cart = request.session.get('cart', {})
 
@@ -30,11 +32,13 @@ def cart_contents(request):
                 if weight == '2.5kg':
                     medium_weight_price = product.Price + 10
                     total += quantity * medium_weight_price
+                    wm_subtotal = quantity * medium_weight_price
                     # print("weight is 2.5kg -- ", weight)
                     # print(total)
                 elif weight == '5kg':
                     heavy_weight_price = product.Price + 25
                     total += quantity * heavy_weight_price
+                    wh_subtotal = quantity * heavy_weight_price
                     # print("weight is 5kg -- ", total, weight, heavy_weight_price)
                     # print(total)
                 else:
@@ -66,7 +70,9 @@ def cart_contents(request):
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'medium_weight_price': medium_weight_price,
         'heavy_weight_price': heavy_weight_price,
-        'grand_total': grand_total
+        'grand_total': grand_total,
+        'wm_subtotal': wm_subtotal,
+        'wh_subtotal': wh_subtotal
     }
 
     return context

@@ -3,7 +3,6 @@
 {% load cart_tools %}
 
 {% block content %}
-    <h1>{{ new_weight_price }} </h1>
     <div class="container-fluid cart-container">
         <div class="row mt-3">
             <div class="col">
@@ -48,7 +47,6 @@
                                     <td>
                                         <p>{{ item.product.Name }}</p>
                                         <p>Amount: {% if item.product.has_weight %} {{item.weight}} {% else %}{{item.product.Size}}{%endif %}</p>
-                                    </td>
                                     <td>
                                         <p>£{% if item.product.has_weight %}
                                                 {% if item.weight == '2.5kg' %}
@@ -88,9 +86,21 @@
                                         <a class="remove-item float-right text-danger"  id="remove_{{ item.product_id }}" data-product_weight="{{ item.weight }}"><small>Remove</small></a>
                                     </td>
                                     <td>
-                                        <p>
-                                            £{{ item.product.Price | calc_subtotal:item.quantity }} 
-                                        </p>
+                                        <p>£
+                                            {% if item.product.has_weight %}
+                                                {% if item.weight == '2.5kg' %}
+                                                    {{ wm_subtotal }}
+                                                {% elif item.weight == '5kg' %}
+                                                    {{ wh_subtotal }}
+                                                {% else %}
+                                                    {{ item.product.price | calc_subtotal:item.quantity }}
+                                                {% endif %}
+                                            {% else %}
+                                                {{ item.product.Price | calc_subtotal:item.quantity }}
+                                            {% endif %}
+                                                
+                                        </p> 
+                                                 
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -142,7 +152,7 @@
         })
 
 
-        // update quantity on click
+        // remove item on click
         $('.remove-item').click(function(e) {
             var csrfToken = '{{ csrf_token }}';
             var itemId = $(this).attr('id').split('remove_')[1];

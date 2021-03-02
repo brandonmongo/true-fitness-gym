@@ -62,7 +62,7 @@
                     {% csrf_token %}
                     <div class="form-group">
                         <select class="custom-select custom-select-lg form-control" name="flavor" id="flavor" required>
-                            <option selected>Select a Flavor</option>
+                            <option>Select a Flavor</option>
                             {% for Flavor in product.Flavor %}
                             <option value="{{Flavour}}">{{Flavor}}</option>
                             {% endfor %}

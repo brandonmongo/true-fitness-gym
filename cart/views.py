@@ -55,8 +55,13 @@ def adjust_cart(request, product_id):
                 cart.pop(product_id)
         else:
             del cart[product_id]['product_by_weight'][weight]
+            if not cart[product_id]['product_by_weight']:
+                cart.pop(product_id)
     else:
-        cart.pop(product_id)
+        if quantity > 0:
+            cart[product_id] = quantity
+        else:
+            cart.pop(product_id)
 
     request.session['cart'] = cart
     print(request.session['cart'])
