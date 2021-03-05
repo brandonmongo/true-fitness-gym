@@ -52,9 +52,10 @@
                 </div>
                 <form class="" action="{% url 'add_to_cart' product.id %}" method="POST">
                     {% csrf_token %}
+                    <label for="flavor">Select a Flavor</label>
                     <div class="form-group">
                         <select class="custom-select custom-select-lg form-control" name="flavor" id="flavor" required>
-                            <option>Please select a Flavor</option>
+                            <option disabled >Please select a Flavor</option>
                             {% for Flavor in product.Flavor %}
                             <option value="{{Flavor}}">{{Flavor}}</option>
                             {% endfor %}
