@@ -9,10 +9,6 @@ def cart_contents(request):
     cart_items = []
     total = 0
     product_count = 0
-    heavy_weight_price = 0
-    medium_weight_price = 0
-    wm_subtotal = 0
-    wm_subtotal = 0
 
     cart = request.session.get('cart', {})
 
@@ -28,28 +24,14 @@ def cart_contents(request):
             })
         else:
             product = get_object_or_404(Product, pk=product_id)
-            for weight, quantity in item_data['product_by_weight'].items():
-                if weight == '2.5kg':
-                    medium_weight_price = product.Price + 10
-                    total += quantity * medium_weight_price
-                    wm_subtotal = quantity * medium_weight_price
-                    # print("weight is 2.5kg -- ", weight)
-                    # print(total)
-                elif weight == '5kg':
-                    heavy_weight_price = product.Price + 25
-                    total += quantity * heavy_weight_price
-                    wh_subtotal = quantity * heavy_weight_price
-                    # print("weight is 5kg -- ", total, weight, heavy_weight_price)
-                    # print(total)
-                else:
-                    total += quantity * product.Price
-                    print(total)
+            for selected_flavor, quantity in item_data['product_by_flavor'].items():
+                total += quantity * product.Price
                 product_count += quantity
                 cart_items.append({
                     'product_id': product_id,
                     'quantity': quantity,
                     'product': product,
-                    'weight': weight
+                    'selected_flavor': selected_flavor
                 })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
@@ -68,11 +50,7 @@ def cart_contents(request):
         'delivery': delivery,
         'free_delivery_gap': free_delivery_gap,
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
-        'medium_weight_price': medium_weight_price,
-        'heavy_weight_price': heavy_weight_price,
         'grand_total': grand_total,
-        'wm_subtotal': wm_subtotal,
-        'wh_subtotal': wh_subtotal
     }
 
     return context

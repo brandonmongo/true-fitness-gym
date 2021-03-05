@@ -14,19 +14,21 @@ def add_to_cart(request, product_id):
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    weight = None
-    if 'product_weight' in request.POST:
-        weight = request.POST['product_weight']
+
+    selected_flavor = None
+
+    selected_flavor = request.POST.get('flavor')
+
     cart = request.session.get('cart', {})
 
-    if weight:
+    if selected_flavor:
         if product_id in list(cart.keys()):
-            if weight in cart[product_id]['product_by_weight'].keys():
-                cart[product_id]['product_by_weight'][weight] += quantity
+            if selected_flavor in cart[product_id]['product_by_flavor'].keys():
+                cart[product_id]['product_by_flavor'][selected_flavor] += quantity
             else:
-                cart[product_id]['product_by_weight'][weight] = quantity
+                cart[product_id]['product_by_flavor'][selected_flavor] = quantity
         else:
-            cart[product_id] = {'product_by_weight': {weight: quantity}}
+            cart[product_id] = {'product_by_flavor': {selected_flavor: quantity}}
     else:
         if product_id in list(cart.keys()):
             cart[product_id] += quantity
@@ -43,19 +45,18 @@ def adjust_cart(request, product_id):
     """ A view that adjust the quantity of a specific product to the specified amount """
 
     quantity = int(request.POST.get('quantity'))
-    weight = None
-    if 'product_weight' in request.POST:
-        weight = request.POST['product_weight']
+
+    selected_flavor = None
+    selected_flavor = request.POST.get('selected_flavor')
+
     cart = request.session.get('cart', {})
 
-    if weight:
+    if selected_flavor:
         if quantity > 0:
-            cart[product_id]['product_by_weight'][weight] = quantity
-            if not cart[product_id]['product_by_weight']:
-                cart.pop(product_id)
+            cart[product_id]['product_by_flavor'][selected_flavor] = quantity
         else:
-            del cart[product_id]['product_by_weight'][weight]
-            if not cart[product_id]['product_by_weight']:
+            del cart[product_id]['product_by_flavor'][selected_flavor]
+            if not cart[product_id]['product_by_flavor']:
                 cart.pop(product_id)
     else:
         if quantity > 0:
@@ -71,14 +72,15 @@ def adjust_cart(request, product_id):
 def remove_from_cart(request, product_id):
     """ A view to remove item from the cart """
     try:
-        weight = None
-        if 'product_weight' in request.POST:
-            weight = request.POST['product_weight']
+        selected_flavor = None
+        selected_flavor = request.POST['selected_flavor']
+        print(selected_flavor)
         cart = request.session.get('cart', {})
 
-        if weight:
-            del cart[product_id]['product_by_weight'][weight]
-            if not cart[product_id]['product_by_weight']:
+        if selected_flavor:
+            del cart[product_id]['product_by_flavor'][selected_flavor]
+            print(cart)
+            if not cart[product_id]['product_by_flavor']:
                 cart.pop(product_id)
         else:
             cart.pop(product_id)
