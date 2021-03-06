@@ -252,6 +252,12 @@ body {
     height: 2px;
 }
 
+.cart-notification {
+    height: 120px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 
 /* media Quries True Products Page  */
 @media (max-width: 768px) and (min-width: 426px) {
