@@ -40,7 +40,7 @@
                     {% if free_delivery_gap > 0 %}
                         <h6>You can get free delivery if you spend £{{free_delivery_gap}} more</h6>
                     {% endif %}
-                    <a href="" class="p-2 d-flex justify-content-end">
+                    <a href="{% url 'checkout' %}" class="p-2 d-flex justify-content-end">
                         <button type="button" class="btn btn-lg checkout-btn">Checkout Securely <i class="fas fa-lock ml-2"></i></button>
                     </a>
                 </div>
