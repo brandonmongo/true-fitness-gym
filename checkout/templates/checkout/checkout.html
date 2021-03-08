@@ -3,7 +3,7 @@
 {% load cart_tools %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css'}">
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -35,12 +35,12 @@
             <form action="{% url 'checkout' %}" method="POST" id="payment-method">
                 {% csrf_token %}
                 <fieldset>
-                    <legend>Details</legend>
+                    <legend class="ml-1">Details</legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                 </fieldset>
                 <fieldset>
-                    <legend>Delivery Details</legend>
+                    <legend class="ml-1">Delivery Details</legend>
                     {{ order_form.phone_number | as_crispy_field }}
                     {{ order_form.country | as_crispy_field }}
                     {{ order_form.postcode | as_crispy_field }}
@@ -61,7 +61,7 @@
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend>Payments Details</legend>
+                    <legend class="ml-1">Payments Details</legend>
                     <!-- A Stripe card element will go here -->
                         <div class="mb-3" id="card-element"></div>
 
@@ -79,7 +79,7 @@
                         </a>
                     </div>
                     
-                    <p>
+                    <p class="text-danger">
                         <span><i class="fas fa-exclamation"></i></span>
                         You'll be charged £{{ grand_total|floatformat:2 }}
                     </p>
@@ -116,4 +116,11 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ id_client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
