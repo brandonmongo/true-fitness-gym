@@ -29,16 +29,16 @@ class Order(models.Model):
     def _generate_order_number(self):
         """generate a random 32 character string"""
 
-        return uuid.uuid4().hex().upper()
+        return uuid.uuid4().hex.upper()
 
     def update_total(self):
         """
         update grand total each time a line item is added, adjusting the delivery 
         cost
         """
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
-        if self.delivery_cost < settings.FREE_DELIVERY_THRESHOLD:
-            self.self.delivery_cost = self.order_total * settings.DELIVERY_PERCENTAGE / 100
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
+            self.delivery_cost = self.order_total * settings.DELIVERY_PERCENTAGE / 100
         else:
             self.delivery_cost = 0
         self.grand_total = self.order_total + self.delivery_cost
