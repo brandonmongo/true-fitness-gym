@@ -35,8 +35,8 @@ card.mount('#card-element');
 
 // handle realtime validation error on the card element
 
-card.addEventListener('change', function(event) {
-    var errorDiv = document.getElementById('card-errors')
+card.addEventListener('change', function (event) {
+    var errorDiv = document.getElementById('card-errors');
     if (event.error) {
         var html = `
             <span role="alert">
@@ -53,12 +53,14 @@ card.addEventListener('change', function(event) {
 
 // handle sumbit form
 
-var form = document.getElementById('payment-form');
+var form = document.getElementById('payment-method');
 
 form.addEventListener('submit', function(ev) {
     ev.preventDefault();
     card.update({ 'disabled': true});
     $('#purchase-button').attr('disabled', true);
+    $('#payment-method').fadeToggle(100);
+    $('#loading-overlay').fadeToggle(100);
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
@@ -73,6 +75,8 @@ form.addEventListener('submit', function(ev) {
                 <span>${result.error.message}</span>
             `;
             $(errorDiv).html(html);
+            $('#payment-method').fadeToggle(100);
+            $('#loading-overlay').fadeToggle(100);
             card.update({ 'disabled': false});
             $('#purchase-button').attr('disabled', false);
         } else {
