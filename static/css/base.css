@@ -276,6 +276,12 @@ body {
 }
 
 
+/* allauth accounts */
+
+.allauth-account {
+    height: 600px;
+}
+
 /* media Quries True Products Page  */
 @media (max-width: 768px) and (min-width: 426px) {
     
