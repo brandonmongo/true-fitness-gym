@@ -39,35 +39,6 @@
   </head>
   <body>
     <header>
-        <!-- <nav class="navbar navbar-light true-nav">
-            <a class="navbar-brand logo" href="#">
-                <img src="/media/LogoMakr-63IL0b.png" width="237" height="160" alt="Logo">
-            </a>
-            <ul class="nav justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Classes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Hire PT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sign In</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Join Now</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Cart</a>
-                </li>
-            </ul>
-
-        </nav> -->
         <div class="d-none d-md-block">
            <div class="row true-nav">
                 <div class="col-md-2">
@@ -89,9 +60,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'products' %}">Products</a>
                         </li>
+                        {% if request.user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sign In</a>
+                            <a class="nav-link" href="{% url 'account_login' %}">Sign In</a>
                         </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                        </li>
+                        {% endif %}
                         <li class="nav-item">
                             <a class="nav-link" href="#">Join Now</a>
                         </li>
