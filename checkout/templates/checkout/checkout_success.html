@@ -190,6 +190,11 @@
                     </div>
                 </div>
             </div>
+            {% if from_profile %}
+                <a href="{% url 'profile' %}" class="p-2">
+                    <button type="button" class="btn btn-lg checkout-btn">Back to Account</button>
+                </a>
+            {% endif %}
         </div>
     </div>
 </div>
