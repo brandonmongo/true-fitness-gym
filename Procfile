@@ -1,0 +1,1 @@
+web: gunicorn true_fitness.wsgi:application
