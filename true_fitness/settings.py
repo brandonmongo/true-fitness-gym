@@ -179,7 +179,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 if 'USE_AWS' in os.environ:
     # cache control
     AWS_S3_OBJECT_PARAMETERS = {
-        'Expires': 'Wed, 31 Dec 3000 20:00:00 GMT',
+        'Expires': 'Mon, 29 Dec 3000 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
     }
 
