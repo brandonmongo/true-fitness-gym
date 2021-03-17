@@ -12,6 +12,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='blog_author')
+    author_friendly_name = models.CharField(max_length=255, blank=True)
     updated_on = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
