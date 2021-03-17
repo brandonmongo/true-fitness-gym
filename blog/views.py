@@ -6,7 +6,7 @@ from .models import Post
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
-    template = 'blog/blog.html'
+    template = 'blog/post_list.html'
 
 
 class PostDetail(generic.DetailView):

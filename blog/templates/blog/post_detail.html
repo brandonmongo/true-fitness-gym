@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="header-contianer">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 card mb-4  mt-3 left  top">
+                <div class="card-body">
+                    <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+                    <p class=" text-muted">Author: {{ post.author }}</p>
+                    <p class="card-text ">{{ object.content | safe }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-end">
+            <a href="{% url 'blog' %}" class="mr-2 back-to-product">
+                <span><i class="fas fa-arrow-left mr-1"></i></span>
+                <span class="text-uppercase ">Back</span>
+            </a>
+        </div>
+    </div>
+{% endblock %}
