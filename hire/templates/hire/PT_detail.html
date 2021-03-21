@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="header-contianer">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <img src="{{ MEDIA_URL }}{{personal_trainer.PT_image}}" class="img-fluid" alt="{{personal_trainer.full_name}}">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h4 class="mt-2">{{personal_trainer.full_name}}</h4>
+                <div class="pt-info">
+                    <h6 class="text-center mb-3">{% if personal_trainer.opening_statement %} {{personal_trainer.opening_statement}} {% else %} Come train with me at True Fitness Gym {% endif %}</h6>
+                    <p>{{personal_trainer.description}}</p>
+                    <p>Contact Me to book sessions on: <span class="text-info"><u>{{personal_trainer.contact_number}}</u></span></p>
+                </div>
+            </div>
+        </div>
+         <div class="row d-flex justify-content-end mb-2">
+            <a href="{% url 'all_PTs' %}" class="mr-2 back-to-product">
+                <span><i class="fas fa-arrow-left mr-1"></i></span>
+                <span class="text-uppercase ">Back</span>
+            </a>
+        </div>
+    </div>
+{% endblock %}
