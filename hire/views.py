@@ -1,4 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.contrib import messages
+from django.db.models import Q
 from .models import PT
 # Create your views here.
 
@@ -8,10 +10,18 @@ def all_PTs(request):
 
     PTs = PT.objects.all().order_by("full_name")
     template = 'hire/hire_PT.html'
+    
+    if 'hire-search' in request.GET:
+        hire_query = request.GET['hire-search']
+        if not hire_query:
+            messages.error(request, 'You didnt search anything')
+            return redirect(reverse('all_PTs'))
+
+        hire_queries = (Q(full_name__icontains=hire_query) | Q(opening_statement__icontains=hire_query))
+        PTs = PTs.filter(hire_queries)
     context = {
         'PTs': PTs
     }
-
     return render(request, template, context)
 
 

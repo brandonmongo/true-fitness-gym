@@ -333,9 +333,14 @@ body {
     height: 480px;
 }
 
+.PT-hire {
+    width: 450px !important;
+}
+
 .pt-info {
     margin-top: 12.5%;
 }
+
 
 /* media Quries True Products Page  */
 @media (max-width: 768px) and (min-width: 426px) {

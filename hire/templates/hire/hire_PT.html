@@ -17,6 +17,17 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-center mb-4">
+               <form class="form-inline" method="GET" action="{% url 'all_PTs' %}">
+                    <input class="form-control mr-sm-2 PT-hire" type="text" name="hire-search" placeholder="Search for PT" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form> 
+            </div>
+            
+        </div>
+    </div>
+    <div class="row">
         {% for PT in PTs %}
         <div class="col-12 col-md-4">
             <div class="card mb-4">
@@ -34,19 +45,20 @@
         </div>
         {% endfor %}
     </div>
-
+</div>
+<div class="scroll-btn" data-toggle="tooltip" data-placement="bottom" title="Scroll to the top">
+    <a class="scroll-link">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 </div>
 
 {% endblock %}
-<div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="{{ MEDIA_URL }}{{PT.PT_image}}" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{PT.full_name}}</h5>
-        <p class="card-text">{% if PT.opening_statement %} {{PT.opening_statement}} {% else %} Come train with me at True Fitness Gym {% endif %}</p>
-        <p class="card-text">{{PT.description}}</p>
-      </div>
-    </div>
-</div>
+
+{% block postloadjs %}
+    {{ block.super }}   
+    <script type="text/javascript">
+        $('.scroll-link').click(function(e) {
+            window.scrollTo(0, 0)
+        })
+    </script>
+{% endblock %}

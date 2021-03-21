@@ -119,11 +119,6 @@
                                             Rating: {{product.Rating}}
                                         </li>
                                     </ul>
-                                    <!-- {% if product.Category %}
-                                    <a href="{% url 'products' %}?category={{product.Category.name}}">{{product.Category.friendly_name}}</a>
-                                    {% endif %}
-                                    <p class="card-text">Price: £{{product.Price}}</p>
-                                    <p class="card-text">Rating: {{product.Rating}}</p> -->
                                     <a href="{% url 'products_details' product.id %}" class="btn btn-success">Purchase</a>
                                 </div>
                             </div>
@@ -149,9 +144,7 @@
         })
     </script>
     <script type="text/javascript">
-        console.log('hello brandon')
         $('.radio-selector').change(function(){
-            console.log('hello')
             var selector = $(this);
             var currentUrl = new URL(window.location);
 
