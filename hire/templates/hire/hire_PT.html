@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="header-contianer">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="p-2">Hire PT</h2>
+        </div>
+    </div>
+    <div class="row">
+        {% for PT in PTs %}
+        <div class="col-12 col-md-4">
+            <div class="card mb-4">
+                <img src="{{ MEDIA_URL }}{{PT.PT_image}}" class="card-img-top" alt="Personal Trainer">
+                <div class="card-body">
+                    <h5 class="card-title">{{PT.full_name}}</h5>
+                    <p class="card-text">{% if PT.opening_statement %} {{PT.opening_statement}} {% else %} Come train with me at True Fitness Gym {% endif %}</p>
+                    {% if PT.availability == True %}
+                    <a href="#" class="btn checkout-btn">Contact Me</a>
+                    {% else %}
+                    <a href="#" class="btn checkout-btn disabled" tabindex="-1" role="button" aria-disabled="true">Unavailable</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}
