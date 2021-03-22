@@ -1,0 +1,6 @@
+<h6 >Cart Total: £{{ total|floatformat:2 }}</h6>
+<h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
+<h6>Grand Total: £{{ grand_total|floatformat:2 }}</h6>
+{% if free_delivery_gap > 0 %}
+    <h6>You can get free delivery if you spend £{{free_delivery_gap}} more</h6>
+{% endif %}

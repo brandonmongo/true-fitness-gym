@@ -31,11 +31,46 @@
         <div class="row mb-3">
             <div class="col">
                 {% if cart_items %}
-                {{ cart_items }}
+                <div class="d-block d-md-none">
+                    <div class="row my-3">
+                        <div class="col">
+                            {% include "cart/includes/cart-total.html" %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            {% include "cart/includes/checkout-buttons.html" %}
+                        </div>
+                    </div>
+                    {% for item in cart_items %}
+                        <div class="row mt-4">
+                            <div class="col-12 col-sm-6 my-4">
+                                {% include "cart/includes/product-image.html" %}
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                {% include "cart/includes/product-info.html" %}
+                            </div>
+                            <div class="col-12 col-sm-6 mb-2">
+                                <p>Price of Each: £{{ item.product.Price }}</p>
+                                <p><strong>Subtotal: </strong>£{{ item.product.Price | calc_subtotal:item.quantity }}</p>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                {% include "cart/includes/quantity-form.html" %}
+                            </div>
+                            <div class="row d-block d-md-none">
+                                <div class="col">
+                                    <div class="h-line"></div>
+                                    <hr class="moblie-cart-line w-80 my-3">
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- {{ cart_items }}
                 <br>
-                <br>
-                {{ request.session.cart }}
-                    <div class="table-responsive">
+                <br> -->
+                <!-- {{ request.session.cart }} -->
+                    <div class="table-responsive d-none d-md-block">
                         <table class="table">
                             <thead>
                                 <tr>
@@ -50,39 +85,16 @@
                             {% for item in cart_items %}
                                 <tr class="w-25">
                                     <td>
-                                        <img src="{{ item.product.image_url }}" alt="{{item.product.Name}}" class="img-fluid cart-img" >
+                                        {% include "cart/includes/product-image.html" %}
                                     </td>
                                     <td>
-                                        <p>{{ item.product.Name }}</p>
-                                        <p>Amount: {{item.product.Size}}</p>
-                                        <p>Flavor: {{item.selected_flavor}}</p>
+                                        {% include "cart/includes/product-info.html" %}
                                     </td>
                                     <td>
                                         <p>£{{ item.product.Price }}</p>
                                     </td>
-                                    <td>
-                                        <form class="update-form" method="POST" action="{% url 'adjust_cart' item.product_id %}">
-                                            {% csrf_token %}
-                                            <label for="quantity">Quantity</label>
-                                            <div class="input-group">
-                                                <div class="input-group-append">
-                                                    <button class="btn checkout-btn btn-sm decrement-qty" data-item_id="{{ item.product_id }}" id="decrement-qty_{{ item.product_id }}">
-                                                        <i class="fas fa-minus fa-sm"></i>
-                                                    </button>
-                                                </div>
-                                              
-                                                    <input type="hidden" name="selected_flavor" value="{{ item.selected_flavor }}">
-                                      
-                                                <input type="number" class="form-control form-control-lg qty_input" name="quantity"  value="{{ item.quantity }}" max="99" min="1" data-item_id="{{ item.product_id }}" id="id_qty_{{ item.product_id }}" required>
-                                                <div class="input-group-prepend">
-                                                    <button class="btn checkout-btn btn-sm increment-qty" data-item_id="{{ item.product_id }}" id="increment-qty_{{ item.product_id }}">
-                                                        <i class="fas fa-plus fa-sm"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <a class="update-link"><small>Update</small></a>
-                                        <a class="remove-item float-right text-danger"  id="remove_{{ item.product_id }}" data-selected_flavor="{{ item.selected_flavor }}"><small>Remove</small></a>
+                                    <td class="quantity-width">
+                                      {% include "cart/includes/quantity-form.html" %}
                                     </td>
                                     <td>
                                         <p>£{{ item.product.Price | calc_subtotal:item.quantity }}</p>          
@@ -91,23 +103,12 @@
                             {% endfor %}
                                 <tr>
                                     <td colspan="5" class="text-right">
-                                        <h6 >Cart Total: £{{ total|floatformat:2 }}</h6>
-                                        <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
-                                        <h6>Grand Total: £{{ grand_total|floatformat:2 }}</h6>
-                                        {% if free_delivery_gap > 0 %}
-                                            <h6>You can get free delivery if you spend £{{free_delivery_gap}} more</h6>
-                                        {% endif %}
+                                       {% include "cart/includes/cart-total.html" %}
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="5">
-                                        <a href="{% url 'checkout' %}" class="p-2">
-                                            <button type="button" class="btn btn-lg checkout-btn">Checkout Securely <i class="fas fa-lock ml-2"></i></button>
-                                        </a>
-                                        <a href="{% url 'products' %}" class="d-flex justify-content-end mr-2 back-to-product">
-                                            <span><i class="fas fa-arrow-left mr-1"></i></span>
-                                            <span class="text-uppercase ">keep shopping</span>
-                                        </a>
+                                       {% include "cart/includes/checkout-buttons.html" %}
                                     </td>
                                 </tr>
                         </table>
@@ -124,18 +125,28 @@
             </div>
         </div>
     </div>
+    <div class="scroll-btn d-block d-md-none" data-toggle="tooltip" data-placement="bottom" title="Scroll to the top">
+        <a class="scroll-link">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
 {% endblock %}
 
 {% block postloadjs %}
     {{block.super}}
     {% include 'products/includes/quantity_input_script.html' %}
     <script type="text/javascript">
+        $('.scroll-link').click(function(e) {
+            window.scrollTo(0, 0)
+        })
+    </script>
+
+    <script type="text/javascript">
         // update quantity on click
         $('.update-link').click(function(e) {
             var form = $(this).prev('.update-form');
             form.submit();
         })
-
 
         // remove item on click
         $('.remove-item').click(function(e) {

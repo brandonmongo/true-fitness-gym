@@ -1,0 +1,22 @@
+<form class="update-form" method="POST" action="{% url 'adjust_cart' item.product_id %}">
+    {% csrf_token %}
+    <label for="quantity">Quantity</label>
+    <div class="input-group">
+        <div class="input-group-append">
+            <button class="btn checkout-btn btn-sm decrement-qty" data-item_id="{{ item.product_id }}" id="decrement-qty_{{ item.product_id }}">
+                <i class="fas fa-minus fa-sm"></i>
+            </button>
+        </div>
+        
+            <input type="hidden" name="selected_flavor" value="{{ item.selected_flavor }}">
+
+        <input type="number" class="form-control form-control-lg qty_input" name="quantity"  value="{{ item.quantity }}" max="99" min="1" data-item_id="{{ item.product_id }}" id="id_qty_{{ item.product_id }}" required>
+        <div class="input-group-prepend">
+            <button class="btn checkout-btn btn-sm increment-qty" data-item_id="{{ item.product_id }}" id="increment-qty_{{ item.product_id }}">
+                <i class="fas fa-plus fa-sm"></i>
+            </button>
+        </div>
+    </div>
+</form>
+<a class="update-link"><small>Update</small></a>
+<a class="remove-item float-right text-danger"  id="remove_{{ item.product_id }}" data-selected_flavor="{{ item.selected_flavor }}"><small>Remove</small></a>

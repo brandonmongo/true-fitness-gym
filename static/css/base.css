@@ -181,7 +181,7 @@ body {
     width: 50px;
     border-radius: 50%;
     position: fixed;
-    right: 15px;
+    right: 19px;
     bottom: 15px;
     background-color: #FF914D;
     box-shadow: 5px 5px 10px #FF914D
@@ -237,6 +237,19 @@ body {
 
 .cart-img {
     height: 250px;
+}
+
+
+.h-line {
+    width: 100vw;
+}
+
+.moblie-cart-line {
+    clear:both;
+    display:block;
+    width: 80%;                
+    height: 2px;
+   
 }
 
 /* toast */
@@ -363,11 +376,22 @@ body {
         margin-bottom: .4rem;
     }
 
+    .quantity-width {
+        width: 124px;
+    }
+
 }
 
 @media (max-width: 426px) {
     .true-card {
         width: 60%;
         margin: auto;
+    }
+
+    .message-container {
+        position: fixed;
+        top: 60px;
+        right: 15px;
+        z-index: 99999;
     }
 }
