@@ -17,7 +17,7 @@
         </div>
         <div class="col-4"></div>
         <div class="col-3">
-            <a class="btn btn-lg true-btn" href="#" role="button">
+            <a class="btn btn-lg true-btn" href="{% url 'account_signup' %}" role="button">
                 Join Now
             </a>
         </div>
@@ -29,7 +29,7 @@
         <div class="col-12 member-heading">
             <h4>Stories from our Members</h4>
         </div>
-        <div class="col-8">
+        <div class="col-12 col-md-8">
             <h5>Jeremaih Peterson Lost 92 lbs</h5>
             <p>
                 After a family hiking excursion proved too taxing for his 290-lb.
@@ -39,16 +39,16 @@
                 started taking twice-daily hour-long hikes, and lifting weights.
             </p>
         </div>
-        <div class="col-4">
+        <div class="col-12 col-md-4">
             <img src="{{ MEDIA_URL }}mh-weightloss-6-05-1528222149.png" alt="weight loss" height="100%" width="100%">
         </div>
     </div>
 
     <div class="row member-story">
-        <div class="col-4">
+        <div class="col-12 col-md-4 d-none d-md-block">
             <img src="{{ MEDIA_URL }}065e875fa7edb4e61bf645d10aad3709.jpg" alt="weight loss" height="100%" width="100%">
         </div>
-        <div class="col-8">
+        <div class="col-12 col-md-8">
             <h5>Vanetza Cine Lost 26 lbs</h5>
             <p>
                 The military officer, 29, took up bodybuilding to be an inspiration to her troops. “I was supposed to be
@@ -60,11 +60,14 @@
                 <span class="true-text">True Fitness</span> with one of our PT and saw real changes in her body for the first time.
             </p>
         </div>
+        <div class="col-12 col-md-4 d-block d-md-none">
+            <img src="{{ MEDIA_URL }}065e875fa7edb4e61bf645d10aad3709.jpg" alt="weight loss" height="100%" width="100%">
+        </div>
     </div>
 </div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-8 open-hours">
+        <div class="col-12 col-md-8 open-hours">
             <div class="hours-box bg-black">
                 <h4 class="text-center">Open Hour/Enquires Time</h4>
 
@@ -85,7 +88,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-12 col-md-4 true-map">
             <h4 class="text-center">True Fitness Gym Location</h4> 
             <div id="map"></div>
         </div>
