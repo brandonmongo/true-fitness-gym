@@ -365,7 +365,7 @@ body {
     
     .true-card {
         width: 10rem; 
-        height: 400px;
+        height: 470px;
     }
 
     .card-title {
@@ -422,4 +422,15 @@ body {
         width: 100%;
         position: relative;
     }
+}
+
+@media (max-width: 1439px) and (min-width: 1023px) {
+    .product-search-btn {
+        margin-left: 33%;
+    }
+    .product-search-input {
+        margin-bottom: 6px;
+        margin-left: 12.5%;
+    }
+    
 }
