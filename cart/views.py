@@ -29,13 +29,13 @@ def add_to_cart(request, product_id):
         if product_id in list(cart.keys()):
             if selected_flavor in cart[product_id]['product_by_flavor'].keys():
                 cart[product_id]['product_by_flavor'][selected_flavor] += quantity
-                messages.success(request, f"Updated {product.Name} Flavor: {selected_flavor} quantity to {cart[product_id]['product_by_flavor'][selected_flavor]}")
+                messages.success(request, f"Updated {product.Name} Flavour: {selected_flavor} quantity to {cart[product_id]['product_by_flavor'][selected_flavor]}")
             else:
                 cart[product_id]['product_by_flavor'][selected_flavor] = quantity
-                messages.success(request, f'Added {product.Name} (Flavor: {selected_flavor}) to your cart')
+                messages.success(request, f'Added {product.Name} (Flavour: {selected_flavor}) to your cart')
         else:
             cart[product_id] = {'product_by_flavor': {selected_flavor: quantity}}
-            messages.success(request, f'Added Flavor {selected_flavor} {product.Name} to your cart')
+            messages.success(request, f'Added Flavour {selected_flavor} {product.Name} to your cart')
     else:
         if product_id in list(cart.keys()):
             cart[product_id] += quantity
@@ -64,12 +64,12 @@ def adjust_cart(request, product_id):
     if selected_flavor:
         if quantity > 0:
             cart[product_id]['product_by_flavor'][selected_flavor] = quantity
-            messages.success(request, f"Updated {product.Name} (Flavor: {selected_flavor}) quantity to {cart[product_id]['product_by_flavor'][selected_flavor]}")
+            messages.success(request, f"Updated {product.Name} (Flavour: {selected_flavor}) quantity to {cart[product_id]['product_by_flavor'][selected_flavor]}")
         else:
             del cart[product_id]['product_by_flavor'][selected_flavor]
             if not cart[product_id]['product_by_flavor']:
                 cart.pop(product_id)
-            messages.success(request, f'Removed Flavor {selected_flavor} {product.Name} from your cart')
+            messages.success(request, f'Removed Flavour {selected_flavor} {product.Name} from your cart')
     else:
         if quantity > 0:
             cart[product_id] = quantity
@@ -97,7 +97,7 @@ def remove_from_cart(request, product_id):
             print(cart)
             if not cart[product_id]['product_by_flavor']:
                 cart.pop(product_id)
-            messages.success(request, f'Removed {product.Name} (Flavor {selected_flavor})  from your cart')
+            messages.success(request, f'Removed {product.Name} (Flavour {selected_flavor})  from your cart')
         else:
             cart.pop(product_id)
             messages.success(request, f'Remove {product.Name} from the cart')
