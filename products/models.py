@@ -21,9 +21,9 @@ class Category(models.Model):
 class Product(models.Model):
     Category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
-    Name = models.CharField(max_length=255, blank=True)
-    Brand = models.CharField(max_length=255, blank=True)
-    Size = models.CharField(max_length=100, blank=True)
+    Name = models.CharField(max_length=255, blank=False)
+    Brand = models.CharField(max_length=255, blank=False)
+    Size = models.CharField(max_length=100, blank=False)
     has_weight = models.BooleanField(default=False, blank=True, null=True)
     Flavor = ArrayField(
         models.CharField(max_length=30, blank=True), blank=True)

@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category
+from .forms import ProductForm
 
 # Create your views here.
 
@@ -66,3 +67,15 @@ def true_product_details(request, product_id):
         'product': product
     }
     return render(request, 'products/true_products_details.html', context)
+
+
+def add_product(request):
+    """ A view to to add product """
+
+    form = ProductForm()
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
