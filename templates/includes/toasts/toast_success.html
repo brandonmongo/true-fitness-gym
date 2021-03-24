@@ -19,7 +19,13 @@
                 {% for item in cart_items %}
                     <div class="row">
                         <div class="col-3">
-                            <img src="{{ item.product.image_url }}" alt="{{item.product.Name}}" class="img-fluid">
+                            {% if item.product.image and item.product.image_url %}
+                                <img src="{{ item.product.image_url }}" alt="{{item.product.Name}}" class="img-fluid" >  
+                            {% elif not item.product.image_url and not item.product.image %}
+                                <img src="{{ MEDIA_URL }}depositphotos_247872612.jpg" class="img-fluid" alt="{{product.Name}}">
+                            {% elif item.product.image and not item.product.image_url %}
+                                <img src="{{ MEDIA_URL }}{{item.product.image}}" class="img-fluid" alt="{{product.Name}}">
+                            {% endif %}
                         </div>
                         <div class="col-9">
                             <ul>

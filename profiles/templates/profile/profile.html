@@ -16,6 +16,15 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
+        <div class="col-12">
+            {% if request.user.is_authenticated %}
+                {% if request.user.is_superuser %}
+                    <a href="{% url 'add_product' %}" class="d-flex justify-content-end mr-4 purchase"><button class="btn btn-lg checkout-btn">Product Management</button> </a>
+                {% endif %}
+            {% endif %} 
+        </div>
+    </div>
+    <div class="row">
         <div class="col">
             <h2 class="p-2">Your Profile</h2>
         </div>
@@ -62,10 +71,18 @@
                                 </td>
                                 <td>£{{ order.grand_total }}</td>
                             </tr>
-                            
                         {% endfor %}
                     </tbody>
                 </table>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                   {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                            <a href="{% url 'add_product' %}" class=""> Product Management</a>
+                        {% endif %}
+                    {% endif %} 
+                </div>
             </div>
             
         </div>

@@ -26,12 +26,12 @@ class Product(models.Model):
     Size = models.CharField(max_length=100, blank=False)
     has_weight = models.BooleanField(default=False, blank=True, null=True)
     Flavor = ArrayField(
-        models.CharField(max_length=30, blank=True), blank=True)
-    Servings = models.PositiveIntegerField(blank=True)
+        models.CharField(max_length=30, blank=False), blank=False)
+    Servings = models.PositiveIntegerField(blank=True, null=True)
     Rating = models.DecimalField(
         max_digits=3, decimal_places=1, blank=True, null=True)
     FlavorRating = models.CharField(max_length=3, blank=True)
-    Reviews = models.PositiveIntegerField(blank=True)
+    Reviews = models.PositiveIntegerField(blank=True, null=True)
     Price = models.DecimalField(max_digits=8, decimal_places=2)
     product_description = models.TextField()
     image_url = models.URLField(max_length=1024, blank=True)
