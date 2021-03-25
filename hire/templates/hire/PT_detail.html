@@ -23,6 +23,12 @@
             </div>
             <div class="col-md-6">
                 <h4 class="mt-2">{{personal_trainer.full_name}}</h4>
+                {% if request.user.is_superuser %}
+                    <small class="ml-3">
+                        <a href="{% url 'edit_pt' personal_trainer.slug %}">Edit</a> | 
+                        <a class="text-danger" href="{% url 'delete_pt' personal_trainer.slug %}">Remove</a>
+                    </small>
+                {% endif %}
                 <div class="pt-info">
                     <h6 class="text-center mb-3">{% if personal_trainer.opening_statement %} {{personal_trainer.opening_statement}} {% else %} Come train with me at True Fitness Gym {% endif %}</h6>
                     <p>{{personal_trainer.description}}</p>

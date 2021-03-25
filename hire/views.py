@@ -41,17 +41,13 @@ def PTs_details(request, PT_slug):
 
 
 def add_PT(request):
-    """ A view to to add personal trainer """
+    """ A view to add personal trainer """
     if request.method == 'POST':
         form = PTForm(request.POST, request.FILES)
         if form.is_valid():
-            # form = PTForm(commit=False)
-            # get_slug = request.GET['full_name']
-            # print(get_slug)
-            # PT.slug = slugify(get_slug)
-            form.save()
+            personal_trainer = form.save()
             messages.success(request, 'Successfully added a PT!')
-            return redirect(reverse('all_PTs'))
+            return redirect(reverse('PTs_details', args=[personal_trainer.slug]))
         else:
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
@@ -66,6 +62,7 @@ def add_PT(request):
 
 
 def edit_PT(request, PT_slug):
+    """ A view to edit personal trainer """
     personal_trainer = get_object_or_404(PT, slug=PT_slug)
     if request.method == 'POST':
         form = PTForm(request.POST, request.FILES, instance=personal_trainer)
@@ -85,3 +82,11 @@ def edit_PT(request, PT_slug):
         'personal_trainer': personal_trainer
     }
     return render(request, template, context)
+
+
+def delete_PT(request, PT_slug):
+    """ A view to delete personal trainer """
+    personal_trainer = get_object_or_404(PT, slug=PT_slug)
+    personal_trainer.delete()
+    messages.success(request, 'PT has been removed!')
+    return redirect(reverse('all_PTs'))
