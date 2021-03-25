@@ -13,6 +13,16 @@
     <div class="container">
         <div class="row mt-3">
             <div class="col-md-6">
+                <div class="row">
+                    <div class="col-12">
+                        {% if request.user.is_superuser %}
+                            <small class="mr-3 mb-3 d-flex justify-content-end">
+                                <a href="{% url 'edit_product' product.id %}" class="mr-1">Edit</a> | 
+                                <a class="text-danger ml-1" href="{% url 'delete_product' product.id %}">Delete</a>
+                            </small>
+                        {% endif %}
+                    </div>
+                </div>
                 <a href="{{product.image_url}}" target="_blank" >
                     <div class="detail-img mb-3">
                         {% if product.image and product.image_url %}
