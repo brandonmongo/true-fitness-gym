@@ -63,3 +63,25 @@ def add_PT(request):
         'pt_form': PT_form
     }
     return render(request, template, context)
+
+
+def edit_PT(request, PT_slug):
+    personal_trainer = get_object_or_404(PT, slug=PT_slug)
+    if request.method == 'POST':
+        form = PTForm(request.POST, request.FILES, instance=personal_trainer)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated product!')
+            return redirect(reverse('PTs_details', args=[personal_trainer.slug]))
+        else:
+            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+    else:
+        PT_form = PTForm(instance=personal_trainer)
+        messages.info(request, f'You are editing {personal_trainer.full_name} PT profile')
+
+    template = 'hire/edit_pt.html'
+    context = {
+        'pt_form': PT_form,
+        'personal_trainer': personal_trainer
+    }
+    return render(request, template, context)
