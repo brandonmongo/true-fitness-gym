@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import PT
 from .forms import PTForm
 
-from slugify import slugify
 # Create your views here.
 
 
@@ -40,8 +40,13 @@ def PTs_details(request, PT_slug):
     return render(request, template, context)
 
 
+@login_required
 def add_PT(request):
     """ A view to add personal trainer """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only Admin has access to this.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = PTForm(request.POST, request.FILES)
         if form.is_valid():
@@ -61,8 +66,13 @@ def add_PT(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_PT(request, PT_slug):
     """ A view to edit personal trainer """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only Admin has access to this.')
+        return redirect(reverse('home'))
+
     personal_trainer = get_object_or_404(PT, slug=PT_slug)
     if request.method == 'POST':
         form = PTForm(request.POST, request.FILES, instance=personal_trainer)
@@ -84,8 +94,13 @@ def edit_PT(request, PT_slug):
     return render(request, template, context)
 
 
+@login_required
 def delete_PT(request, PT_slug):
     """ A view to delete personal trainer """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only Admin has access to this.')
+        return redirect(reverse('home'))
+
     personal_trainer = get_object_or_404(PT, slug=PT_slug)
     personal_trainer.delete()
     messages.success(request, 'PT has been removed!')
