@@ -2,6 +2,9 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
 from .models import PT
+from .forms import PTForm
+
+from slugify import slugify
 # Create your views here.
 
 
@@ -10,7 +13,7 @@ def all_PTs(request):
 
     PTs = PT.objects.all().order_by("full_name")
     template = 'hire/hire_PT.html'
-    
+
     if 'hire-search' in request.GET:
         hire_query = request.GET['hire-search']
         if not hire_query:
@@ -33,5 +36,30 @@ def PTs_details(request, PT_slug):
     template = 'hire/PT_detail.html'
     context = {
         'personal_trainer': personal_trainer
+    }
+    return render(request, template, context)
+
+
+def add_PT(request):
+    """ A view to to add personal trainer """
+    if request.method == 'POST':
+        form = PTForm(request.POST, request.FILES)
+        if form.is_valid():
+            # form = PTForm(commit=False)
+            # get_slug = request.GET['full_name']
+            # print(get_slug)
+            # PT.slug = slugify(get_slug)
+            form.save()
+            messages.success(request, 'Successfully added a PT!')
+            return redirect(reverse('all_PTs'))
+        else:
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+    else:
+        PT_form = PTForm()
+
+    PT_form = PTForm()
+    template = 'hire/add_pt.html'
+    context = {
+        'pt_form': PT_form
     }
     return render(request, template, context)

@@ -20,6 +20,7 @@
             {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
                     <a href="{% url 'add_product' %}" class="d-flex justify-content-end mr-4 purchase"><button class="btn btn-lg checkout-btn">Product Management</button> </a>
+                    <a href="{% url 'add_pt' %}" class="d-flex justify-content-end mr-4 mt-3 purchase"><button class="btn btn-lg checkout-btn">Add Personal Trainer</button> </a>
                 {% endif %}
             {% endif %} 
         </div>

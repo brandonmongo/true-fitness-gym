@@ -14,7 +14,11 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="mb-3">
+                {% if personal_trainer.PT_image %}
                     <img src="{{ MEDIA_URL }}{{personal_trainer.PT_image}}" class="img-fluid" alt="{{personal_trainer.full_name}}">
+                {% else %}
+                    <img src="{{ MEDIA_URL }}depositphotos_247872612.jpg" class="card-img-top" alt="{{product.Name}}">
+                {% endif %}
                 </div>
             </div>
             <div class="col-md-6">

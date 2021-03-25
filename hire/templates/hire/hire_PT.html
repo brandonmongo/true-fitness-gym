@@ -31,7 +31,11 @@
         {% for PT in PTs %}
         <div class="col-12 col-md-4">
             <div class="card mb-4">
-                <img src="{{ MEDIA_URL }}{{PT.PT_image}}" class="card-img-top" alt="Personal Trainer">
+                {% if PT.PT_image %}
+                    <img src="{{ MEDIA_URL }}{{PT.PT_image}}" class="card-img-top" alt="Personal Trainer">
+                {% else %}
+                    <img src="{{ MEDIA_URL }}depositphotos_247872612.jpg" class="card-img-top" alt="{{product.Name}}">
+                {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{PT.full_name}}</h5>
                     <p class="card-text">{% if PT.opening_statement %} {{PT.opening_statement}} {% else %} Come train with me at True Fitness Gym {% endif %}</p>
