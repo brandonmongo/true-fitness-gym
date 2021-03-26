@@ -12,7 +12,7 @@ class PTForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         """
-        Add pattern in the slug field with does 
+        Add pattern in the slug field with does
         not allow spaces
         """
         super().__init__(*args, **kwargs)
