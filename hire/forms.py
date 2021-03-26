@@ -9,3 +9,7 @@ class PTForm(forms.ModelForm):
             'full_name', 'slug', 'opening_statement', 'description',
             'availability', 'contact_number', 'PT_image'
         )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['slug'].widget.attrs['pattern'] = "[^' ']+"

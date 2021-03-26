@@ -31,6 +31,8 @@
                             <img src="{{ MEDIA_URL }}depositphotos_247872612.jpg" class="" alt="{{product.Name}}">
                         {% elif product.image and not product.image_url %}
                             <img src="{{ MEDIA_URL }}{{product.image}}" class="" alt="{{product.Name}}">
+                        {% elif not product.image and product.image_url %}
+                        <img src="{{product.image_url}}" class="" alt="{{product.Name}}">
                         {% endif %}
                     </div>
                     

@@ -109,6 +109,8 @@
                                     <img src="{{ MEDIA_URL }}depositphotos_247872612.jpg" class="card-img-top"  height="50%" alt="{{product.Name}}">
                                 {% elif product.image and not product.image_url %}
                                     <img src="{{ MEDIA_URL }}{{product.image}}" class="card-img-top"  height="50%" alt="{{product.Name}}">
+                                {% elif not product.image and product.image_url %}
+                                    <img src="{{product.image_url}}" class="card-img-top"  height="50%" alt="{{product.Name}}">
                                 {% endif %}
                                 <div class="card-body">
                                     <h5 class="card-title">{{product.Name}}</h5>
