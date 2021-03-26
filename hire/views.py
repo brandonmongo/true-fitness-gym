@@ -13,6 +13,7 @@ def all_PTs(request):
 
     PTs = PT.objects.all().order_by("full_name")
     template = 'hire/hire_PT.html'
+    hire_query = None
 
     if 'hire-search' in request.GET:
         hire_query = request.GET['hire-search']
@@ -23,7 +24,8 @@ def all_PTs(request):
         hire_queries = (Q(full_name__icontains=hire_query) | Q(opening_statement__icontains=hire_query))
         PTs = PTs.filter(hire_queries)
     context = {
-        'PTs': PTs
+        'PTs': PTs,
+        'searched_PT': hire_query
     }
     return render(request, template, context)
 
