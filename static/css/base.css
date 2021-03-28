@@ -434,6 +434,12 @@ body {
     .true-join {
         left: 45%;
     }
+
+    .PT-hire {
+        width: 250px !important;
+        margin-right: 5px;
+    }
+
 }
 
 @media (max-width: 1439px) and (min-width: 1023px) {
