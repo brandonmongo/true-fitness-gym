@@ -384,6 +384,10 @@ body {
     .quantity-width {
         width: 124px;
     }
+    
+    .nav-list {
+        font-size: .9rem;
+    }
 
 }
 
@@ -421,6 +425,14 @@ body {
         background-size: cover;
         width: 100%;
         position: relative;
+    }
+
+    .slogan {
+        top: 55%;
+    }
+
+    .true-join {
+        left: 45%;
     }
 }
 
